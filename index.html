@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida - Bellisima SALON & SPA</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+</head>
+<body>
+    <!-- Botón al inicio -->
+    <button onclick="topFunction()" id="topButton">&#8679; Volver al inicio</button>
+
+    <!-- Navegación -->
+    <nav>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="nosotros.html">Quiénes Somos</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="tratamientos.html">Tratamientos</a></li>
+            <li><a href="precios.html">Precios</a></li>
+            <li><a href="citas.html">Reservar Cita</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de bienvenida -->
+    <section id="bienvenida">
+        <h1>Bienvenidos a Bellisima SALON & SPA</h1>
+        <div class="carousel">
+            <div><img src="images/carrusel1.jpg" alt="Imagen 1"></div>
+            <div><img src="images/carrusel2.jpg" alt="Imagen 2"></div>
+            <div><img src="images/carrusel3.jpg" alt="Imagen 3"></div>
+            <div><img src="images/carrusel4.jpg" alt="Imagen 4"></div>
+        </div>
+        <p>Descubre un espacio dedicado a tu belleza y bienestar en el corazón de Perú. En Bellisima SALON & SPA, ofrecemos una amplia gama de servicios personalizados que te harán lucir y sentirte mejor que nunca.</p>
+    </section>
+
+    <!-- Sección de presentación -->
+    <section id="presentacion">
+        <h2>Nuestro Compromiso</h2>
+        <img src="images/presentacion.jpg" alt="Compromiso Bellisima SALON & SPA">
+        <p>Nuestro equipo de profesionales está comprometido a brindar una experiencia única y excepcional. Desde el momento en que entras por nuestras puertas, te recibirán con una cálida bienvenida y dedicarán el tiempo necesario para entender y satisfacer tus necesidades.</p>
+    </section>
+
+    <!-- Sección de exploración -->
+    <section id="exploracion">
+        <h3>Explora Nuestros Servicios</h3>
+        <img src="/images/exploracion.jpg" alt="Explora Nuestros Servicios">
+        <p>Explora nuestros servicios y descubre cómo podemos ayudarte a alcanzar tus objetivos de belleza. Desde tratamientos capilares y faciales hasta relajantes masajes y cuidados especializados, cada servicio está diseñado pensando en ti.</p>
+        <ul>
+            <li><a href="servicios.html">Servicios de Peluquería</a></li>
+            <li><a href="tratamientos.html">Tratamientos Faciales</a></li>
+            <li><a href="precios.html">Lista de Precios</a></li>
+            <li><a href="nosotros.html">Quiénes Somos</a></li>
+        </ul>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <h3>Síguenos en redes sociales</h3>
+        <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+        </ul>
+        <p>&copy; 2025 Bellisima SALON & SPA. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Slick Carousel JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+            });
+        });
+        
+        // Función para volver al inicio
+        var topButton = document.getElementById("topButton");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

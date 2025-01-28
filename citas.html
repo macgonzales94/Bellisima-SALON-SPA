@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva tu Cita - Bellisima SALON & SPA</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <button onclick="topFunction()" id="topButton">&#8679; Volver al inicio</button>
+    <h2>Reserva tu Cita</h2>
+
+    <img src="/images/reservar_detalle.jpg" alt="Reserva tu Cita">
+    <p>Para ofrecerte una atención exclusiva y personalizada, reserva tu cita con nosotros completando el siguiente formulario:</p>
+    <form>
+        <p>
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </p>
+
+        <p>
+            <label for="telefono">Celular:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+        </p>
+
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+            <label for="servicio">Servicio deseado:</label>
+            <select id="servicio" name="servicio" required>
+                <option value="">Seleccione un servicio</option>
+                <optgroup label="Servicios de Peluquería">
+                    <option value="corte">Corte de cabello</option>
+                    <option value="tinte">Tinte</option>
+                    <option value="peinado">Peinado</option>
+                    <option value="tratamiento">Tratamiento capilar</option>
+                </optgroup>
+                <optgroup label="Tratamientos Faciales">
+                    <option value="limpieza">Limpieza facial</option>
+                    <option value="antiedad">Tratamiento anti-edad</option>
+                    <option value="hidratacion">Hidratación</option>
+                </optgroup>
+                <optgroup label="Servicios de Belleza">
+                    <option value="manicure">Manicure</option>
+                    <option value="pedicure">Pedicure</option>
+                    <option value="maquillaje">Maquillaje</option>
+                    <option value="depilacion">Depilación</option>
+                </optgroup>
+                <optgroup label="Paquetes Especiales">
+                    <option value="dia-spa">Día de Spa</option>
+                    <option value="novia">Paquete Novia</option>
+                </optgroup>
+            </select>
+        </p>
+
+        <p>
+            <label for="fecha">Fecha deseada:</label>
+            <input type="date" id="fecha" name="fecha" required>
+        </p>
+
+        <p>
+            <label for="hora">Hora preferida:</label>
+            <select id="hora" name="hora" required>
+                <option value="">Seleccione una hora</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+                <option value="19:00">19:00</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="mensaje">Comentarios adicionales:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Indícanos cualquier detalle importante que debamos saber...""></textarea>
+        </p>
+
+        <p>
+            <input type="checkbox" id="acepto" name="acepto" required>
+            <label for="acepto">Acepto la política de privacidad y los términos y condiciones</label>
+        </p>
+
+        <p>
+            <button type="submit">Reservar mi Cita</button>
+        </p>
+    </form>
+
+    <article class="notas-importantes">
+        <h4>Notas Importantes:</h4>
+        <ul>
+            <li>Por favor, llegue 10 minutos antes de su cita</li>
+            <li>En caso de no poder asistir, cancele su cita con 24 horas de anticipación</li>
+            <li>Para servicios de tinte o tratamientos especiales, se requiere un depósito previo</li>
+            <li>Los precios pueden variar según el largo y tipo de cabello</li>
+        </ul>
+    </article>
+    <footer>
+        <h3>Síguenos en redes sociales</h3>
+        <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+        </ul>
+        <p>&copy; 2025 Bellisima SALON & SPA. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para volver al inicio
+        var topButton = document.getElementById("topButton");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

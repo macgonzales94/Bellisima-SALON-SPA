@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Bellisima SALON & SPA</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <button onclick="topFunction()" id="topButton">&#8679; Volver al inicio</button>
+    <h2>Contacto</h2>
+
+    <img src="/images/contacto_detalle.jpg" alt="Contacto">
+    <p>Estamos aquí para responder a tus preguntas y ayudarte con cualquier información que necesites. Contáctanos a través de los siguientes medios:</p>
+
+    <section>
+        <h3>Ubicación</h3>
+        <img src="/images/ubicacion.jpg" alt="Ubicación">
+        <p>[Dirección exacta del local en Perú]</p>
+        <p>Lima, Perú</p>
+    </section>
+
+    <section>
+        <h3>Horario de Atención</h3>
+        <img src="/images/horario.jpg" alt="Horario de Atención">
+        <p>Lunes a Sábado: 9:00 - 20:00</p>
+        <p>Domingos: 10:00 - 16:00</p>
+    </section>
+    <section>
+        <h3>Contacto</h3>
+        <img src="/images/contacto_detalle.jpg" alt="Contacto">
+        <p>Teléfono: 914246444</p>
+        <p>WhatsApp: 914246444</p>
+        <p>Email: info@bellisimasalon.pe</p>
+    </section>
+
+    <footer>
+        <h3>Síguenos en redes sociales</h3>
+        <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+        </ul>
+        <p>&copy; 2025 Bellisima SALON & SPA. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para volver al inicio
+        var topButton = document.getElementById("topButton");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

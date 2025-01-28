@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios - Bellisima SALON & SPA</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <button onclick="topFunction()" id="topButton">&#8679; Volver al inicio</button>
+    <h2>Lista de Precios</h2>
+
+    <img src="/images/precios_detalle.jpg" alt="Lista de Precios">
+    <p>Conoce nuestras tarifas y haz tu reserva hoy mismo. En Bellisima SALON & SPA, ofrecemos precios competitivos sin comprometer la calidad de nuestros servicios.</p>
+
+    <section>
+        <h3>Servicios de Peluquería</h3>
+        <img src="/images/precios_peluqueria.jpg" alt="Servicios de Peluquería">
+        <ul>
+            <li>Corte de dama - S/. 50</li>
+            <li>Corte de caballero - S/. 35</li>
+            <li>Tinte completo - Desde S/. 150</li>
+            <li>Mechas - Desde S/. 180</li>
+            <li>Peinado - Desde S/. 60</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Tratamientos de Belleza</h3>
+        <img src="/images/precios_belleza.jpg" alt="Tratamientos de Belleza">
+        <ul>
+            <li>Manicura clásica - S/. 40</li>
+            <li>Pedicura spa - S/. 60</li>
+            <li>Limpieza facial - S/. 120</li>
+            <li>Depilación facial - S/. 30</li>
+            <li>Maquillaje profesional - S/. 100</li>
+        </ul>
+    </section>
+    <section>
+        <h3>Tratamientos Premium</h3>
+        <img src="/images/precios_premium.jpg" alt="Tratamientos Premium">
+        <ul>
+            <li>Día de Spa Completo - S/. 350</li>
+            <li>Tratamiento capilar premium - S/. 200</li>
+            <li>Tratamiento facial anti-edad - S/. 180</li>
+            <li>Paquete novia - S/. 500</li>
+        </ul>
+    </section>
+
+    <footer>
+        <h3>Síguenos en redes sociales</h3>
+        <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">TikTok</a></li>
+        </ul>
+        <p>&copy; 2025 Bellisima SALON & SPA. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para volver al inicio
+        var topButton = document.getElementById("topButton");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+/* ==========================================================================
+   Estilos de Navegación Desktop
+   ========================================================================== */
+
+/* Navegación Principal */
+.main-nav {
+    position: fixed; /* Fija la barra de navegación */
+    width: 100%; /* Ancho completo */
+    padding: var(--spacing-md) var(--spacing-lg); /* Espaciado interno */
+    background: rgba(255, 255, 255, 0.95); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: transform 0.3s ease; /* Transición suave */
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    box-shadow: var(--shadow-sm); /* Sombra ligera */
+}
+
+/* Logo */
+.logo {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    font-weight: 700; /* Grosor de la fuente */
+    color: var(--color-secondary); /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+.logo:hover {
+    color: var(--color-primary); /* Cambia el color al hacer hover */
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: var(--spacing-lg); /* Espacio entre elementos */
+}
+
+.nav-links {
+    display: flex; /* Flexbox para alinear elementos */
+    gap: var(--spacing-lg); /* Espacio entre elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.nav-links a {
+    color: var(--color-text); /* Color de texto */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 500; /* Grosor de la fuente */
+    transition: color 0.3s ease; /* Transición suave */
+    padding: var(--spacing-xs) var(--spacing-sm); /* Espaciado interno */
+    border-radius: var(--border-radius-sm); /* Bordes redondeados */
+}
+
+.nav-links a:hover {
+    color: var(--color-secondary); /* Cambia el color al hacer hover */
+    background-color: rgba(212, 175, 55, 0.1); /* Fondo al hacer hover */
+}
+
+.nav-links a.active {
+    color: var(--color-secondary); /* Color del texto activo */
+    font-weight: 600; /* Grosor de la fuente activa */
+}
+
+/* Cart Icon para Desktop */
+.cart-icon {
+    position: relative; /* Posición relativa para el badge */
+    cursor: pointer; /* Cursor de puntero */
+    padding: var(--spacing-xs); /* Espaciado interno */
+}
+
+.cart-badge {
+    position: absolute; /* Posición absoluta para el badge */
+    top: -8px; /* Posición desde arriba */
+    right: -8px; /* Posición desde la derecha */
+    background: var(--color-secondary); /* Fondo del badge */
+    color: var(--color-white); /* Color del texto */
+    border-radius: 50%; /* Forma circular */
+    width: 16px; /* Ancho del badge */
+    height: 16px; /* Altura del badge */
+    font-size: 0.7rem; /* Tamaño de fuente pequeño */
+    display: flex; /* Flexbox para centrar el texto */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+/* Elementos ocultos en desktop */
+.cart-container,
+.menu-toggle,
+.sidebar,
+.overlay {
+    display: none; /* Oculta elementos en desktop */
+}
+
+/* ==========================================================================
+   Estilos de Navegación Mobile
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Ajustes de navegación principal en móvil */
+    .main-nav {
+        padding: var(--spacing-sm); /* Espaciado interno reducido */
+    }
+
+    .logo {
+        font-size: 1.2rem; /* Tamaño de fuente reducido */
+    }
+
+    /* Ocultar elementos desktop */
+    .desktop-nav {
+        display: none; /* Oculta la navegación desktop */
+    }
+
+    /* Mostrar elementos mobile */
+    .cart-container {
+        display: flex; /* Muestra el contenedor del carrito */
+        align-items: center; /* Centra verticalmente los elementos */
+        gap: var(--spacing-md); /* Espacio entre elementos */
+    }
+
+    /* Botón de menú hamburguesa */
+    .menu-toggle {
+        display: block; /* Muestra el botón de menú */
+        border: none; /* Sin borde */
+        background: none; /* Sin fondo */
+        cursor: pointer; /* Cursor de puntero */
+        padding: var(--spacing-sm); /* Espaciado interno */
+        color: var(--color-text); /* Color del texto */
+    }
+
+    .menu-toggle svg {
+        width: 24px; /* Ancho del ícono */
+        height: 24px; /* Altura del ícono */
+        transition: transform 0.3s ease; /* Transición suave */
+    }
+
+    .menu-toggle:hover svg {
+        transform: scale(1.1); /* Efecto de escala al hacer hover */
+    }
+
+    /* Sidebar - Menú lateral móvil */
+    .sidebar {
+        display: flex; /* Muestra el menú lateral */
+        position: fixed; /* Fija el menú en la pantalla */
+        top: 0; /* Lo coloca en la parte superior */
+        left: -100%; /* Lo oculta fuera de la pantalla inicialmente */
+        width: 100%; /* Ancho completo */
+        max-width: 300px; /* Ancho máximo del menú */
+        height: 100vh; /* Altura completa de la ventana */
+        background: var(--color-white); /* Fondo blanco */
+        padding: var(--spacing-lg); /* Espaciado interno */
+        transition: left 0.3s ease; /* Transición suave al abrir/cerrar */
+        z-index: 2000; /* Asegura que esté por encima de otros elementos */
+        flex-direction: column; /* Organiza los elementos en columna */
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    }
+    
+    .sidebar.active {
+        left: 0; /* Muestra el menú lateral */
+    }
+    
+    /* Logo en el sidebar */
+    .sidebar .logo {
+        font-size: 1.8rem; /* Tamaño de fuente */
+        margin-bottom: var(--spacing-lg); /* Espaciado inferior */
+        color: var(--color-text); /* Color del texto */
+        text-align: center; /* Centra el texto */
+    }
+    
+    /* Links del Sidebar */
+    .sidebar-links {
+        display: flex; /* Flexbox para alinear elementos */
+        flex-direction: column; /* Organiza los elementos en columna */
+        gap: var(--spacing-md); /* Espacio entre elementos */
+        padding: var(--spacing-md) 0; /* Espaciado interno */
+    }
+
+    .sidebar-links a {
+        color: var(--color-text); /* Color de texto */
+        text-decoration: none; /* Sin subrayado */
+        font-size: 1rem; /* Tamaño de fuente */
+        padding: var(--spacing-sm) var(--spacing-md); /* Espaciado interno */
+        transition: all 0.3s ease; /* Transición suave */
+        border-radius: var(--border-radius-sm); /* Bordes redondeados */
+    }
+
+    /* Estilo especial para el enlace activo */
+    .sidebar-links a.active {
+        background-color: var(--color-primary); /* Fondo del enlace activo */
+        color: var(--color-white); /* Color del texto activo */
+    }
+
+    /* Estilo especial para el botón Shop */
+    .sidebar-links .shop-button {
+        border: 1px solid var(--color-text); /* Borde */
+        border-radius: var(--border-radius-full); /* Bordes redondeados */
+        text-align: center; /* Centra el texto */
+        margin-top: var(--spacing-md); /* Espaciado superior */
+        padding: var(--spacing-sm) var(--spacing-md); /* Espaciado interno */
+    }
+
+    /* Links legales */
+    .legal-links {
+        margin-top: auto; /* Coloca los enlaces legales al final */
+        display: flex; /* Flexbox para alinear elementos */
+        flex-direction: column; /* Organiza los elementos en columna */
+        gap: var(--spacing-sm); /* Espacio entre elementos */
+        padding: var(--spacing-md) 0; /* Espaciado interno */
+    }
+
+    .legal-links a {
+        color: var(--color-text); /* Color de texto */
+        text-decoration: none; /* Sin subrayado */
+        font-size: 0.9rem; /* Tamaño de fuente pequeño */
+        opacity: 0.7; /* Opacidad reducida */
+        text-align: center; /* Centra el texto */
+    }
+
+    /* Botón de cierre */
+    .close-button {
+        position: absolute; /* Posición absoluta */
+        top: var(--spacing-md); /* Posición desde arriba */
+        right: var(--spacing-md); /* Posición desde la derecha */
+        background: none; /* Sin fondo */
+        border: none; /* Sin borde */
+        font-size: 1.5rem; /* Tamaño de fuente */
+        cursor: pointer; /* Cursor de puntero */
+        color: var(--color-text); /* Color del texto */
+    }
+}

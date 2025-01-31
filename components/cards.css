@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Componente de Tarjetas
+   ========================================================================== */
+
+/* Tarjeta base */
+.card {
+    background: var(--color-white); /* Fondo blanco */
+    border-radius: var(--border-radius-lg); /* Bordes redondeados */
+    padding: var(--spacing-lg); /* Espaciado interno */
+    box-shadow: var(--shadow-sm); /* Sombra ligera */
+    transition: all 0.3s ease; /* Transición suave para efectos hover */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de levantar la tarjeta al hacer hover */
+    box-shadow: var(--shadow-md); /* Sombra más pronunciada al hacer hover */
+}
+
+/* Cabecera de tarjeta */
+.card-header {
+    margin-bottom: var(--spacing-md); /* Espaciado inferior */
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    color: var(--color-text); /* Color de texto */
+    margin-bottom: var(--spacing-xs); /* Espaciado inferior */
+}
+
+.card-subtitle {
+    color: var(--color-text-light); /* Color de texto más claro */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+}
+
+/* Contenido de tarjeta */
+.card-content {
+    margin-bottom: var(--spacing-md); /* Espaciado inferior */
+}
+
+/* Imagen de tarjeta */
+.card-image {
+    width: 100%; /* Ancho completo */
+    height: 200px; /* Altura fija */
+    object-fit: cover; /* Ajusta la imagen para cubrir el espacio */
+    border-radius: var(--border-radius-md); /* Bordes redondeados */
+    margin-bottom: var(--spacing-md); /* Espaciado inferior */
+}
+
+/* Pie de tarjeta */
+.card-footer {
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding-top: var(--spacing-md); /* Espaciado superior */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Borde superior */
+}
+
+/* Variantes de tarjeta */
+.card-service {
+    text-align: center; /* Centra el texto */
+    padding: var(--spacing-xl); /* Espaciado interno */
+}
+
+.card-service .card-icon {
+    width: 64px; /* Ancho del ícono */
+    height: 64px; /* Altura del ícono */
+    margin: 0 auto var(--spacing-md); /* Centra el ícono y añade espaciado inferior */
+    color: var(--color-secondary); /* Color del ícono */
+}
+
+.card-testimonial {
+    position: relative; /* Posición relativa para elementos internos */
+    padding-top: var(--spacing-xl); /* Espaciado superior */
+}
+
+.card-testimonial::before {
+    content: '"'; /* Añade comillas */
+    position: absolute; /* Posición absoluta */
+    top: var(--spacing-md); /* Posición desde arriba */
+    left: var(--spacing-md); /* Posición desde la izquierda */
+    font-size: 4rem; /* Tamaño de fuente grande */
+    color: var(--color-primary); /* Color de las comillas */
+    opacity: 0.2; /* Opacidad reducida */
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+}
+
+/* Tarjeta de producto */
+.card-product {
+    position: relative; /* Posición relativa para elementos internos */
+}
+
+.card-product .card-badge {
+    position: absolute; /* Posición absoluta */
+    top: var(--spacing-md); /* Posición desde arriba */
+    right: var(--spacing-md); /* Posición desde la derecha */
+    background: var(--color-secondary); /* Fondo del badge */
+    color: var(--color-white); /* Color del texto */
+    padding: var(--spacing-xs) var(--spacing-sm); /* Espaciado interno */
+    border-radius: var(--border-radius-sm); /* Bordes redondeados */
+    font-size: 0.8rem; /* Tamaño de fuente pequeño */
+}
+
+.card-product .card-price {
+    font-size: 1.25rem; /* Tamaño de fuente */
+    color: var(--color-secondary); /* Color del texto */
+    font-weight: 600; /* Grosor de la fuente */
+}
+
+/* Grid de tarjetas */
+.card-grid {
+    display: grid; /* Usa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: var(--spacing-lg); /* Espacio entre tarjetas */
+    padding: var(--spacing-md); /* Espaciado interno */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        padding: var(--spacing-md); /* Espaciado interno reducido en móviles */
+    }
+
+    .card-service {
+        padding: var(--spacing-lg); /* Espaciado interno reducido en móviles */
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+        gap: var(--spacing-md); /* Espacio entre tarjetas reducido */
+    }
+}

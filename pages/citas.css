@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Estilos específicos para la página de Citas
+   ========================================================================== */
+
+/* Layout principal 
+   Establece el contenedor principal y su espaciado respecto al nav fijo */
+   .container {
+    max-width: 800px; /* Ancho máximo */
+    margin: 80px auto 2rem; /* Margen superior para el nav fijo */
+    padding: 0 2rem; /* Espaciado interno */
+    position: relative; /* Posición relativa */
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Encabezado de página
+   Estilos para el título principal y descripción */
+.page-title {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    color: var(--color-text); /* Color del texto */
+    margin-bottom: 2rem; /* Espaciado inferior */
+    text-align: center; /* Centra el texto */
+    font-size: 2.5rem; /* Tamaño de fuente */
+    font-weight: 500; /* Grosor de la fuente */
+}
+
+.form-description {
+    text-align: center; /* Centra el texto */
+    margin-bottom: 2rem; /* Espaciado inferior */
+    color: var(--color-text-light); /* Color de texto más claro */
+    line-height: 1.6; /* Altura de línea */
+    max-width: 600px; /* Ancho máximo */
+    margin-left: auto; /* Centra el contenedor */
+    margin-right: auto; /* Centra el contenedor */
+}
+
+/* Formulario principal
+   Estilos del contenedor del formulario y su sombreado */
+.appointment-form {
+    background: var(--color-white); /* Fondo blanco */
+    padding: 2.5rem; /* Espaciado interno */
+    border-radius: var(--border-radius-lg); /* Bordes redondeados */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Sombra ligera */
+    margin-bottom: 2rem; /* Espaciado inferior */
+}
+
+/* Grupos de formulario
+   Contenedores para cada campo del formulario */
+.form-group {
+    margin-bottom: 1.5rem; /* Espaciado inferior */
+}
+
+/* Etiquetas de formulario
+   Estilos para las etiquetas de los campos */
+.form-label {
+    display: block; /* Hace que la etiqueta sea un bloque */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+    color: var(--color-text); /* Color del texto */
+    font-weight: 500; /* Grosor de la fuente */
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+}
+
+/* Campos de entrada
+   Estilos compartidos para todos los inputs */
+.form-input {
+    width: 100%; /* Ancho completo */
+    padding: 0.8rem; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde */
+    border-radius: var(--border-radius-sm); /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Estados de los campos
+   Estilos para focus y hover de los inputs */
+.form-input:focus,
+.form-select:focus {
+    outline: none; /* Sin contorno */
+    border-color: var(--color-secondary); /* Cambia el color del borde al hacer focus */
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); /* Sombra al hacer focus */
+}
+
+/* Select personalizado
+   Estilos específicos para los campos select */
+.form-select {
+    width: 100%; /* Ancho completo */
+    padding: 0.8rem; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde */
+    border-radius: var(--border-radius-sm); /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de puntero */
+    background-color: var(--color-white); /* Fondo blanco */
+    appearance: none; /* Elimina el estilo por defecto del select */
+    background-image: url("data:image/svg+xml,..."); /* Ícono personalizado */
+    background-repeat: no-repeat; /* Sin repetición del ícono */
+    background-position: right 0.8rem center; /* Posición del ícono */
+}
+
+/* Grupos de opciones en selects
+   Estilos para los optgroup dentro de selects */
+optgroup {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    color: var(--color-secondary); /* Color del texto */
+    font-weight: 500; /* Grosor de la fuente */
+}
+
+/* Área de texto
+   Estilos específicos para textareas */
+.form-textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 100px; /* Altura mínima */
+    line-height: 1.5; /* Altura de línea */
+}
+
+/* Checkbox personalizado
+   Estilos para el contenedor del checkbox y su label */
+.checkbox-label {
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 0.5rem; /* Espacio entre elementos */
+    cursor: pointer; /* Cursor de puntero */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+    color: var(--color-text-light); /* Color de texto más claro */
+}
+
+.form-checkbox {
+    width: 18px; /* Ancho del checkbox */
+    height: 18px; /* Altura del checkbox */
+    cursor: pointer; /* Cursor de puntero */
+    accent-color: var(--color-secondary); /* Color del checkbox */
+}
+
+/* Botón de envío
+   Estilos para el botón principal del formulario */
+.submit-button {
+    background: linear-gradient(135deg, var(--color-secondary), #F0C14B); /* Fondo con gradiente */
+    color: var(--color-white); /* Color del texto */
+    padding: 1rem 2rem; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: var(--border-radius-full); /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de puntero */
+    width: 100%; /* Ancho completo */
+    transition: all 0.3s ease; /* Transición suave */
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+}
+
+.submit-button:hover {
+    transform: translateY(-2px); /* Efecto de levantar al hacer hover */
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2); /* Sombra al hacer hover */
+}
+
+/* Sección de notas importantes
+   Estilos para el contenedor de notas y su contenido */
+.notas-importantes {
+    background: rgba(229, 181, 181, 0.1); /* Fondo semi-transparente */
+    padding: 1.5rem; /* Espaciado interno */
+    border-radius: var(--border-radius-lg); /* Bordes redondeados */
+    margin-top: 2rem; /* Espaciado superior */
+    border: 1px solid rgba(229, 181, 181, 0.2); /* Borde */
+}
+
+.notas-importantes h4 {
+    color: var(--color-secondary); /* Color del texto */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    font-size: 1.2rem; /* Tamaño de fuente */
+}
+
+.notas-importantes ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+}
+
+.notas-importantes li {
+    margin-bottom: 0.8rem; /* Espaciado inferior */
+    padding-left: 1.5rem; /* Espaciado interno */
+    position: relative; /* Posición relativa */
+    line-height: 1.6; /* Altura de línea */
+    color: var(--color-text-light); /* Color de texto más claro */
+}
+
+.notas-importantes li::before {
+    content: "•"; /* Añade un punto */
+    color: var(--color-secondary); /* Color del punto */
+    position: absolute; /* Posición absoluta */
+    left: 0; /* Posición desde la izquierda */
+    font-size: 1.2rem; /* Tamaño de fuente */
+}
+
+/* Responsive
+   Ajustes para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem; /* Espaciado interno reducido */
+        margin-top: 60px; /* Margen superior reducido para el nav fijo */
+    }
+
+    .appointment-form {
+        padding: 1.5rem; /* Espaciado interno reducido */
+    }
+
+    .page-title {
+        font-size: 2rem; /* Tamaño de fuente reducido */
+    }
+
+    .form-group {
+        margin-bottom: 1rem; /* Espaciado inferior reducido */
+    }
+
+    .submit-button {
+        padding: 0.8rem 1.5rem; /* Espaciado interno reducido */
+    }
+}

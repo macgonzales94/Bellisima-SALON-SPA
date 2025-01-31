@@ -1,0 +1,304 @@
+/* ==========================================================================
+   Variables globales y configuración base
+   ========================================================================== */
+
+/* Define las variables CSS globales */
+:root {
+    /* Paleta de colores basada en el logo */
+    --color-primary: #E5B5B5;    /* Rosa principal */
+    --color-secondary: #D4AF37;  /* Dorado */
+    --color-background: #F9F0F0; /* Fondo rosa suave */
+    --color-text: #333333;       /* Texto principal */
+    --color-text-light: #666666; /* Texto secundario */
+    --color-white: #FFFFFF;      /* Blanco */
+    
+    /* Espaciado */
+    --spacing-xs: 0.25rem; /* Espaciado extra pequeño */
+    --spacing-sm: 0.5rem;  /* Espaciado pequeño */
+    --spacing-md: 1rem;    /* Espaciado medio */
+    --spacing-lg: 2rem;    /* Espaciado grande */
+    --spacing-xl: 4rem;    /* Espaciado extra grande */
+
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra pequeña */
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12); /* Sombra media */
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra grande */
+
+    /* Bordes */
+    --border-radius-sm: 4px; /* Radio de borde pequeño */
+    --border-radius-md: 8px; /* Radio de borde medio */
+    --border-radius-lg: 16px; /* Radio de borde grande */
+    --border-radius-full: 9999px; /* Radio de borde circular */
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0; /* Elimina los márgenes por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño del elemento */
+}
+
+html {
+    font-size: 16px; /* Tamaño de fuente base */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+body {
+    font-family: 'Playfair Display', serif; /* Fuente principal */
+    color: var(--color-text); /* Color de texto principal */
+    line-height: 1.6; /* Altura de línea */
+    background-color: var(--color-background); /* Color de fondo */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+}
+
+/* ==========================================================================
+   Componentes de Navegación
+   ========================================================================== */
+
+/* Barra de navegación principal */
+.main-nav {
+    position: fixed; /* Fija la barra de navegación */
+    width: 100%; /* Ancho completo */
+    padding: var(--spacing-md) var(--spacing-lg); /* Espaciado interno */
+    background: rgba(255, 255, 255, 0.95); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Estilos para el logo en la barra de navegación */
+.main-nav .logo {
+    font-size: 1.5rem; /* Tamaño de fuente */
+    font-weight: 700; /* Grosor de la fuente */
+    color: var(--color-secondary); /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+/* Cambia el color del logo al hacer hover */
+.main-nav .logo:hover {
+    color: var(--color-primary); /* Color rosa al hacer hover */
+}
+
+/* Estilos para los enlaces de navegación */
+.main-nav .nav-links a {
+    color: var(--color-text); /* Color de texto */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 500; /* Grosor de la fuente */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+/* Cambia el color de los enlaces al hacer hover */
+.main-nav .nav-links a:hover {
+    color: var(--color-secondary); /* Color dorado al hacer hover */
+}
+
+/* ==========================================================================
+   Componentes de Botones
+   ========================================================================== */
+
+/* Botón de acción principal */
+.action-button {
+    background: linear-gradient(135deg, var(--color-secondary), #F0C14B); /* Fondo con gradiente */
+    color: var(--color-white); /* Color del texto */
+    padding: 0.8rem 2rem; /* Espaciado interno */
+    border-radius: var(--border-radius-full); /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 500; /* Grosor de la fuente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de puntero */
+    text-align: center; /* Centra el texto */
+    display: inline-block; /* Hace que el botón sea inline-block */
+}
+
+/* Efecto de levantar el botón al hacer hover */
+.action-button:hover {
+    transform: translateY(-2px); /* Levanta el botón */
+    box-shadow: var(--shadow-md); /* Añade sombra */
+}
+
+/* Botón secundario (shop) */
+.shop-button {
+    border: 1.5px solid var(--color-text); /* Borde */
+    padding: 0.5rem 2rem; /* Espaciado interno */
+    border-radius: var(--border-radius-full); /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    color: var(--color-text); /* Color del texto */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Cambia el fondo y el color del texto al hacer hover */
+.shop-button:hover {
+    background: var(--color-text); /* Fondo oscuro */
+    color: var(--color-white); /* Texto blanco */
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+/* Sección hero con video de fondo */
+.hero {
+    width: 100%; /* Ancho completo */
+    height: 100vh; /* Altura completa de la ventana */
+    position: relative; /* Posición relativa */
+    overflow: hidden; /* Oculta el desbordamiento */
+    background: linear-gradient(
+        rgba(229, 181, 181, 0.3), /* Gradiente con transparencia */
+        rgba(212, 175, 55, 0.3)
+    );
+    display: flex; /* Usar flexbox para centrar */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    text-align: center; /* Centrar el texto */
+}
+/* Video de fondo */
+.hero video {
+    position: absolute; /* Posición absoluta para el video */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    object-fit: cover; /* Cubrir todo el espacio */
+    z-index: 1; /* Asegurar que el video esté detrás del contenido */
+}
+
+/* Contenido del hero */
+.hero-content {
+    position: relative; /* Posición relativa para el contenido */
+    z-index: 2; /* Asegurar que el contenido esté sobre el video */
+}
+
+.hero-title {
+    color: white; /* Color del texto */
+    font-size: 2.5rem; /* Tamaño del texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Cambia la dirección de los botones a columna */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-button {
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    color: #333; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.action-button:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fondo más opaco al pasar el mouse */
+}
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* Ajustes para pantallas pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: row; /* Dirección horizontal */
+        justify-content: space-between; /* Espacio entre elementos */
+    }
+
+    /* Oculta la navegación desktop en móviles */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Ajusta la posición del contenido del hero en móviles */
+    .hero-content {
+        right: 5%; /* Posición desde la derecha */
+        left: 5%; /* Posición desde la izquierda */
+    }
+
+    /* Reduce el tamaño del título en móviles */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    /* Cambia la dirección de los botones a columna en móviles */
+    .action-buttons {
+        display: flex;
+        flex-direction: column; /* Coloca los botones en vertical */
+        gap: 10px; /* Espacio entre botones */
+        margin-bottom: 10px;
+    }
+
+    /* Hace que los botones ocupen el ancho completo en móviles */
+    .action-button {
+        width: px;
+    }
+}
+
+/* ==========================================================================
+   Utilidades
+   ========================================================================== */
+
+/* Clase para ocultar elementos visualmente pero mantenerlos accesibles */
+.visually-hidden {
+    position: absolute; /* Posición absoluta */
+    width: 1px; /* Ancho mínimo */
+    height: 1px; /* Altura mínima */
+    padding: 0; /* Sin padding */
+    margin: -1px; /* Margen negativo */
+    overflow: hidden; /* Oculta el desbordamiento */
+    clip: rect(0, 0, 0, 0); /* Recorta el contenido */
+    border: 0; /* Sin borde */
+}
+
+/* ==========================================================================
+   Layout Base - Estilos compartidos entre páginas
+   ========================================================================== */
+
+/* Reseteo básico */
+* {
+    margin: 0; /* Elimina los márgenes por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño del elemento */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; /* Fuente alternativa */
+}
+
+/* Layout principal sin hero */
+.page-wrapper {
+    padding-top: 80px; /* Espaciado superior para la barra de navegación */
+    min-height: 100vh; /* Altura mínima de la ventana */
+    background: var(--color-background); /* Color de fondo */
+}
+
+/* Navegación principal */
+nav {
+    position: fixed; /* Fija la barra de navegación */
+    top: 0; /* Posición desde arriba */
+    width: 100%; /* Ancho completo */
+    height: 80px; /* Altura de la barra de navegación */
+    padding: 1rem 2rem; /* Espaciado interno */
+    background: white; /* Fondo blanco */
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra ligera */
+}
+
+/* Ajustes responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .page-wrapper {
+        padding-top: 60px; /* Espaciado superior reducido para móviles */
+    }
+    
+    nav {
+        height: 60px; /* Altura reducida para móviles */
+        padding: 1rem; /* Espaciado interno reducido */
+    }
+}

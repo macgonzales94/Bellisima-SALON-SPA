@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Componente de Footer
+   ========================================================================== */
+
+   .footer {
+    background: linear-gradient(to right, var(--color-primary), #F9F0F0); /* Fondo con gradiente */
+    padding: var(--spacing-xl) 0; /* Espaciado superior e inferior */
+    color: var(--color-text); /* Color de texto */
+    margin-top: auto; /* Asegura que el footer esté al final de la página */
+}
+
+/* Contenedor principal del footer */
+.footer-container {
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 0 var(--spacing-lg); /* Espaciado interno */
+    display: grid; /* Usa CSS Grid */
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: var(--spacing-xl); /* Espacio entre columnas */
+}
+
+/* Sección del logo */
+.footer-brand {
+    grid-column: span 1; /* Ocupa una columna */
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    font-size: 1.8rem; /* Tamaño de fuente */
+    color: var(--color-secondary); /* Color del texto */
+    margin-bottom: var(--spacing-md); /* Espaciado inferior */
+    display: block; /* Hace que el logo sea un bloque */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.footer-description {
+    color: var(--color-text); /* Color de texto */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+    line-height: 1.6; /* Altura de línea */
+    margin-bottom: var(--spacing-md); /* Espaciado inferior */
+}
+
+/* Secciones de enlaces */
+.footer-section {
+    grid-column: span 1; /* Ocupa una columna */
+}
+
+.footer-title {
+    color: var(--color-secondary); /* Color del texto */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    margin-bottom: var(--spacing-md); /* Espaciado inferior */
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+}
+
+.footer-links {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.footer-links li {
+    margin-bottom: var(--spacing-sm); /* Espaciado inferior */
+}
+
+.footer-links a {
+    color: var(--color-text); /* Color de texto */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease; /* Transición suave */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+.footer-links a:hover {
+    color: var(--color-secondary); /* Cambia el color al hacer hover */
+}
+
+/* Sección de contacto */
+.contact-info {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.contact-info li {
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: var(--spacing-sm); /* Espacio entre elementos */
+    margin-bottom: var(--spacing-sm); /* Espaciado inferior */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+.contact-info svg {
+    width: 20px; /* Ancho del ícono */
+    height: 20px; /* Altura del ícono */
+    color: var(--color-secondary); /* Color del ícono */
+}
+
+/* Sección de redes sociales */
+.social-links {
+    display: flex; /* Flexbox para alinear elementos */
+    gap: var(--spacing-md); /* Espacio entre elementos */
+    margin-top: var(--spacing-md); /* Espaciado superior */
+}
+
+.social-link {
+    width: 36px; /* Ancho del ícono */
+    height: 36px; /* Altura del ícono */
+    border-radius: 50%; /* Forma circular */
+    background: var(--color-white); /* Fondo blanco */
+    display: flex; /* Flexbox para centrar el ícono */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    transition: all 0.3s ease; /* Transición suave */
+    color: var(--color-secondary); /* Color del ícono */
+}
+
+.social-link:hover {
+    transform: translateY(-3px); /* Efecto de levantar al hacer hover */
+    box-shadow: var(--shadow-md); /* Sombra al hacer hover */
+    background: var(--color-secondary); /* Cambia el fondo al hacer hover */
+    color: var(--color-white); /* Cambia el color del ícono al hacer hover */
+}
+
+/* Sección inferior del footer */
+.footer-bottom {
+    margin-top: var(--spacing-xl); /* Espaciado superior */
+    padding-top: var(--spacing-md); /* Espaciado superior */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Borde superior */
+    text-align: center; /* Centra el texto */
+    font-size: 0.8rem; /* Tamaño de fuente pequeño */
+    color: var(--color-text-light); /* Color de texto más claro */
+}
+
+.footer-bottom-links {
+    margin-top: var(--spacing-sm); /* Espaciado superior */
+}
+
+.footer-bottom-links a {
+    color: var(--color-text-light); /* Color de texto más claro */
+    text-decoration: none; /* Sin subrayado */
+    margin: 0 var(--spacing-sm); /* Espaciado horizontal */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+.footer-bottom-links a:hover {
+    color: var(--color-secondary); /* Cambia el color al hacer hover */
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    display: flex; /* Flexbox para alinear elementos */
+    gap: var(--spacing-sm); /* Espacio entre elementos */
+    margin-top: var(--spacing-md); /* Espaciado superior */
+}
+
+.newsletter-input {
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 0.8rem var(--spacing-md); /* Espaciado interno */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde */
+    border-radius: var(--border-radius-full); /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+.newsletter-button {
+    background: var(--color-secondary); /* Fondo del botón */
+    color: var(--color-white); /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 0.8rem var(--spacing-lg); /* Espaciado interno */
+    border-radius: var(--border-radius-full); /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.newsletter-button:hover {
+    background: var(--color-text); /* Cambia el fondo al hacer hover */
+    transform: translateY(-2px); /* Efecto de levantar al hacer hover */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: var(--spacing-lg); /* Espacio entre elementos */
+    }
+
+    .footer-brand, 
+    .footer-section {
+        grid-column: span 1; /* Ocupa una columna */
+        text-align: center; /* Centra el texto */
+    }
+
+    .social-links {
+        justify-content: center; /* Centra los íconos de redes sociales */
+    }
+
+    .contact-info li {
+        justify-content: center; /* Centra los elementos de contacto */
+    }
+
+    .newsletter-form {
+        flex-direction: column; /* Coloca los elementos en columna */
+    }
+}

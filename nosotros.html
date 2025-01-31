@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiénes Somos - Bellisima SALON & SPA</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <button onclick="topFunction()" id="topButton">&#8679; Volver al inicio</button>
+    <h2>Quiénes Somos</h2>
+
+    <img src="images/nosotros_detalle.jpg" alt="Quiénes Somos">
+    <p>En Bellisima SALON & SPA, nos dedicamos a realzar la belleza natural de nuestros clientes a través de experiencias únicas de bienestar y belleza, ofreciendo servicios personalizados de la más alta calidad.</p>
+
+    <section>
+        <h3>Misión</h3>
+        <img src="images/mision.jpg" alt="Misión">
+        <p>Nos dedicamos a realzar la belleza natural de nuestros clientes a través de experiencias únicas de bienestar y belleza, ofreciendo servicios personalizados de la más alta calidad. Nos comprometemos a brindar un ambiente acogedor y profesional.</p>
+    </section>
+
+    <section>
+        <h3>Visión</h3>
+        <img src="images/vision.jpg" alt="Visión">
+        <p>Ser reconocidos como el salón y spa líder en Perú, destacándonos por nuestra excelencia en servicios personalizados, innovación constante y compromiso con la satisfacción total del cliente.</p>
+    </section>
+    <section>
+        <h3>Nuestros Valores</h3>
+        <img src="images/valores.jpg" alt="Nuestros Valores">
+        <ul>
+            <b>Excelencia:</b> Nos esforzamos por superar las expectativas en cada servicio<br>
+            <b>Profesionalismo:</b> Personal altamente capacitado y en constante actualización<br>
+            <b>Calidad:</b> Utilizamos productos de primera línea para todos nuestros servicios<br>
+            <b>Innovación:</b> Nos mantenemos a la vanguardia en técnicas y tratamientos<br>
+            <b>Compromiso:</b> Dedicados a la satisfacción y bienestar de nuestros clientes<br>
+        </ul>
+    </section>
+
+    <footer>
+        <h3>Síguenos en redes sociales</h3>
+        <ul>
+            <a href="#">Instagram</a><br>
+            <a href="#">Facebook</a><br>
+            <a href="#">TikTok</a><br>
+        </ul>
+        <p>&copy; 2025 Bellisima SALON & SPA. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para volver al inicio
+        var topButton = document.getElementById("topButton");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

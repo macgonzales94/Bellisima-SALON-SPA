@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta tags básicos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la vista para dispositivos móviles -->
+    <meta name="description" content="Bellisima Salon & Spa - Tu destino de belleza y relajación. Servicios de peluquería, tratamientos faciales, masajes y más."> <!-- Descripción de la página -->
+    <meta name="keywords" content="salon, spa, belleza, peluquería, masajes, tratamientos faciales, bienestar"> <!-- Palabras clave para SEO -->
+    <meta name="author" content="Bellisima Salon & Spa"> <!-- Autor de la página -->
+
+    <title>Bellisima SALON & SPA - Tu destino de belleza y bienestar</title> <!-- Título de la página -->
+
+    <!-- Precargar fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Mejora la carga de fuentes -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Mejora la carga de fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Fuente personalizada -->
+
+    <!-- Favicon -->    
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png"> <!-- Favicon de 32x32 píxeles -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png"> <!-- Favicon de 16x16 píxeles -->
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/comprar_productos.css"> <!-- Archivo principal de estilos -->
+    
+     <!-- Estilos de componentes -->
+    <link rel="stylesheet" href="css/components/navigation.css"> <!-- Estilos para la navegación -->
+    <link rel="stylesheet" href="css/components/buttons.css"> <!-- Estilos para los botones -->
+    <link rel="stylesheet" href="css/components/cards.css"> <!-- Estilos para las tarjetas -->
+    <link rel="stylesheet" href="css/components/footer.css"> <!-- Estilos para el pie de página -->
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Bellisima SALON & SPA"> <!-- Título para Open Graph -->
+    <meta property="og:description" content="Tu destino de belleza y relajación. Servicios premium de salón y spa."> <!-- Descripción para Open Graph -->
+    <meta property="og:image" content="assets/images/og-image.jpg"> <!-- Imagen para Open Graph -->
+    <meta property="og:url" content="https://bellisimasalon.com"> <!-- URL para Open Graph -->
+</head>
+<body>
+
+    <!-- Header y Navegación -->
+    <header>
+        <nav class="nav" aria-label="Navegación principal"> <!-- Barra de navegación principal -->
+            <a href="index.html" class="logo" aria-label="Bellisima - Ir al inicio">BELLISIMA</a> <!-- Logo con enlace al inicio -->
+            
+             <!-- Navegación Desktop -->
+            <div class="desktop-nav">
+
+                <div class="nav-links">
+                    <a href="index.html" aria-current="page">Inicio</a> <!-- Enlace a la página de inicio -->
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="salon.html">Salón</a> <!-- Enlace a la página del salón -->
+                    <a href="spa.html">Spa</a> <!-- Enlace a la página del spa -->
+                    <a href="contacto.html">Contacto</a> <!-- Enlace a la página de contacto -->
+                </div> 
+                
+                <!-- Carrito -->
+                <div class="cart-icon" role="button" aria-label="Carrito de compras">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM20 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge" aria-label="Cantidad de items en el carrito">0</span>
+                </div>
+                <a href="comprar_productos.html" class="shop-button">Shop</a>
+
+            </div>
+
+            <!-- Navegación Mobile -->
+            <div class="cart-container">
+                <div class="cart-icon" role="button" aria-label="Carrito de compras móvil">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM20 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge" aria-label="Cantidad de items en el carrito móvil">0</span>
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menú de navegación">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menú lateral móvil -->
+    <aside class="sidebar" aria-label="Menú móvil">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo" aria-label="Bellisima - Ir al inicio">BELLISIMA</a> <!-- Logo con enlace al inicio en el menú móvil -->
+            <button class="close-button" aria-label="Cerrar menú">×</button>
+        </div>
+        <div class="sidebar-links">
+            <a href="index.html" class="active">Inicio</a> <!-- Enlace a la página de inicio -->
+            <a href="salon.html">Salón</a> <!-- Enlace a la página del salón -->
+            <a href="nosotros.html">Nosotros</a> <!-- Enlace a la página del salón -->
+            <a href="spa.html">Spa</a> <!-- Enlace a la página del spa -->
+            <a href="contacto.html">Contacto</a> <!-- Enlace a la página de contacto -->
+            <a href="comprar_productos.html">Tienda</a> <!-- Enlace a la página de contacto -->
+            <a href="#" class="shop-button">Shop</a> <!-- Botón para acceder a la tienda -->
+        </div>
+        <div class="legal-links">
+            <a href="#" rel="nofollow">Términos y condiciones</a> <!-- Enlace a los términos y condiciones -->
+            <a href="#" rel="nofollow">Política de privacidad</a> <!-- Enlace a la política de privacidad -->
+        </div>
+    </aside>
+    
+    <br><br>
+    
+    <!-- Main Content -->
+    <main>
+        <section class="productos">
+            <div class="producto" onclick="abrirFormulario('Producto A', 50)">
+                <img src="assets/img/imagen_productoA.jpg" alt="Producto A"> <!-- Ruta a la imagen del Producto A -->
+                <h2>Set maquillaje</h2>
+                <p>Precio: S/50</p>
+            </div>
+            <div class="producto" onclick="abrirFormulario('Producto B', 40)">
+                <img src="assets/img/imagen_productoB.jpg" alt="Producto B"> <!-- Ruta a la imagen del Producto B -->
+                <h2>Cremas piel</h2>
+                <p>Precio: S/40</p>
+            </div>
+            <div class="producto" onclick="abrirFormulario('Producto C', 70)">
+                <img src="assets/img/imagen_productoC.jpg" alt="Producto C"> <!-- Ruta a la imagen del Producto C -->
+                <h2>Locion piel</h2>
+                <p>Precio: S/70</p>
+            </div>
+            <div class="producto" onclick="abrirFormulario('Producto D', 90)">
+                <img src="assets/img/imagen_productoD.jpg" alt="Producto D"> <!-- Ruta a la imagen del Producto D -->
+                <h2>Perfume floral</h2>
+                <p>Precio: S/90</p>
+            </div>
+        </section>
+        <section class="productos">
+            <div class="producto" onclick="abrirFormulario('Producto G', 120)">
+                <img src="assets/img/imagen_productoG.jpg" alt="Producto G"> <!-- Ruta a la imagen del Producto G -->
+                <h2>Removedor</h2>
+                <p>Precio: S/12</p>
+            </div>
+            <div class="producto" onclick="abrirFormulario('Producto H', 180)">
+                <img src="assets/img/imagen_productoH.jpg" alt="Producto H"> <!-- Ruta a la imagen del Producto H -->
+                <h2>Mascarilla</h2>
+                <p>Precio: S/18</p>
+            </div>
+            <div class="producto" onclick="abrirFormulario('Producto I', 250)">
+                <img src="assets/img/imagen_productoI.jpg" alt="Producto I"> <!-- Ruta a la imagen del Producto I -->
+                <h2>Cremas Premiun</h2>
+                <p>Precio: S/250</p>
+            </div>
+            <div class="producto" onclick="abrirFormulario('Producto J', 180)">
+                <img src="assets/img/imagen_productoJ.jpg" alt="Producto J"> <!-- Ruta a la imagen del Producto J -->
+                <h2>Cosmeticos</h2>
+                <p>Precio: S/180</p>
+            </div>
+        </section>
+        <section class="productos">
+            <div class="producto" onclick="abrirFormulario('Producto M', 450)">
+                <img src="assets/img/imagen_productoM.jpg" alt="Producto M"> <!-- Ruta a la imagen del Producto M -->
+                <h2>Set Shampoos</h2>
+                <p>Precio: S/50</p>
+            </div>
+            <div class="producto" onclick="abrirFormulario('Producto N', 40)">
+                <img src="assets/img/imagen_productoN.jpg" alt="Producto N"> <!-- Ruta a la imagen del Producto N -->
+                <h2>Cremas cabello</h2>
+                <p>Precio: S/40</p>
+            </div>
+            <div class="producto" onclick="abrirFormulario('Producto O', 50)">
+                <img src="assets/img/imagen_productoO.jpg" alt="Producto O"> <!-- Ruta a la imagen del Producto O -->
+                <h2>Crema hidratante</h2>
+                <p>Precio: S/50</p>
+            </div>
+            <div class="producto" onclick="abrirFormulario('Producto P', 60)">
+                <img src="assets/img/imagen_productoP.jpg" alt="Producto P"> <!-- Ruta a la imagen del Producto P -->
+                <h2>Crema floral</h2>
+                <p>Precio: S/60</p>
+            </div>
+        </section>
+    </main>
+    
+    <div id="modalCompra" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarFormulario()">&times;</span>
+            <h2>Detalles de La Compra</h2>
+            <p id="productoInfo"></p>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" min="1" value="1" onchange="actualizarCosto()">
+            
+            <label for="tarjeta">Nombres y Apellidos:</label>
+            <input type="text" id="datos" placeholder="Nombres y Apellidos">
+            
+            <label for="tarjeta">Tarjeta de crédito:</label>
+            <input type="text" id="tarjeta" placeholder="Número de tarjeta"><br>
+            
+            <label for="fechaVencimiento">Fecha de vencimiento:</label>
+            <input type="number" id="tarjeta" placeholder="Fecha de vencimiento">
+
+            <label for="cvv">CVV:</label>
+            <input type="number" id="tarjeta" placeholder="CVV"><br>
+            
+            <label for="direccion">Dirección de envío:</label>
+            <input type="text" id="direccion" placeholder="Dirección">
+            
+            <p id="totalCompra"></p>
+            <button onclick="confirmarCompra()">Comprar</button>
+        </div>
+    </div>
+    
+    <div id="compraConfirmada" class="modal oculto">
+        <div class="modal-contenido">
+            <h2>✔ Compra Exitosa</h2>
+            <p>¡Gracias por tu compra!</p>
+            <button onclick="cerrarConfirmacion()">Aceptar</button>
+        </div>
+    </div>
+
+    <div class="overlay" aria-hidden="true"></div> <!-- Superposición para el menú móvil -->
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sección de marca -->
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">BELLISIMA</a> <!-- Logo con enlace al inicio -->
+                <p class="footer-description">
+                    Tu destino de belleza y relajación.
+                </p>
+            </div>
+
+            <!-- Sección de servicios -->
+            <div class="footer-section">
+                <h3 class="footer-title">Servicios</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Servicios de Salón</a></li> <!-- Enlace a servicios de salón -->
+                    <li><a href="#">Servicios de Spa</a></li> <!-- Enlace a servicios de spa -->
+                    <li><a href="#">Tratamientos Faciales</a></li> <!-- Enlace a tratamientos faciales -->
+                    <li><a href="#">Masajes</a></li> <!-- Enlace a masajes -->
+                    <li><a href="#">Productos</a></li> <!-- Enlace a productos -->
+                </ul>
+            </div>
+
+            <!-- Sección de soporte -->
+            <div class="footer-section">
+                <h3 class="footer-title">Soporte</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Preguntas Frecuentes</a></li> <!-- Enlace a preguntas frecuentes -->
+                    <li><a href="#">Política de Privacidad</a></li> <!-- Enlace a la política de privacidad -->
+                    <li><a href="#">Términos y Condiciones</a></li> <!-- Enlace a términos y condiciones -->
+                    <li><a href="#">Contacto</a></li> <!-- Enlace a la página de contacto -->
+                </ul>
+            </div>
+
+            <!-- Sección de contacto -->
+            <div class="footer-section">
+                <h3 class="footer-title">Contacto</h3>
+                <ul class="contact-info">
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        123 Calle Principal, Ciudad <!-- Dirección física -->
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        (123) 456-7890 <!-- Número de teléfono -->
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        info@bellisimasalon.com <!-- Dirección de correo electrónico -->
+                    </li>
+                </ul>
+                
+                <!-- Newsletter -->
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Tu correo electrónico"> <!-- Campo de entrada para el correo electrónico -->
+                    <button class="newsletter-button">Suscribirse</button> <!-- Botón para suscribirse al newsletter -->
+                </div>
+            </div>
+        </div>
+         
+        <!-- Footer inferior -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bellisima Salon & Spa. Todos los derechos reservados.</p> <!-- Derechos de autor -->
+            <div class="footer-bottom-links">
+                <a href="#">Privacidad</a> <!-- Enlace a la política de privacidad -->
+                <a href="#">Términos</a> <!-- Enlace a los términos y condiciones -->
+                <a href="#">Cookies</a> <!-- Enlace a la política de cookies -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="js/main.js" defer></script> <!-- Archivo principal de JavaScript -->
+    <script src="js/comprar_productos.js" defer></script>
+
+    <!-- Script de Google Analytics (opcional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> <!-- Script de Google Analytics -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX'); <!-- Configuración de Google Analytics -->
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.productos').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: true,
+            });
+        });
+    </script>
+
+</body>
+</html>

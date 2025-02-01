@@ -2,6 +2,25 @@
    Estilos específicos para la página de Citas
    ========================================================================== */
 
+/* Reset y estilos base */
+* {
+    margin: 0; /* Elimina los márgenes por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño del elemento */
+}
+
+html {
+    font-size: 16px; /* Tamaño de fuente base */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+body {
+    font-family: 'Playfair Display', serif; /* Fuente principal */
+    color: var(--color-text); /* Color de texto principal */
+    line-height: 1.6; /* Altura de línea */
+    background-color: var(--color-background); /* Color de fondo */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+}
 /* Layout principal 
    Establece el contenedor principal y su espaciado respecto al nav fijo */
    .container {
@@ -46,6 +65,7 @@
 /* Grupos de formulario
    Contenedores para cada campo del formulario */
 .form-group {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
     margin-bottom: 1.5rem; /* Espaciado inferior */
 }
 
@@ -82,6 +102,7 @@
 /* Select personalizado
    Estilos específicos para los campos select */
 .form-select {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
     width: 100%; /* Ancho completo */
     padding: 0.8rem; /* Espaciado interno */
     border: 1px solid #ddd; /* Borde */

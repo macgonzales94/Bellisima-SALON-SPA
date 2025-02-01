@@ -1,0 +1,142 @@
+:root {
+    --color-primary: #E5B5B5;    /* Rosa principal */
+    --color-secondary: #D4AF37;  /* Dorado */
+    --color-background: #F9F0F0; /* Fondo rosa suave */
+    --color-text: #333333;       /* Texto principal */
+    --color-text-light: #666666; /* Texto secundario */
+    --color-white: #FFFFFF;      /* Blanco */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Establece la fuente a Arial con una fuente alternativa sans-serif */
+    background-color: --color-background; /* Color de fondo claro */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+header {
+    background-color: #343a40; /* Color de fondo oscuro para el encabezado */
+    color: white; /* Color del texto en blanco */
+    padding: 15px 0; /* Espaciado interno vertical de 15 píxeles */
+}
+
+.productos {
+    display: flex; /* Utiliza flexbox para organizar los productos */
+    justify-content: center; /* Centra los productos horizontalmente */
+    gap: 40px; /* Aumenta el espaciado a 40 píxeles entre los productos */
+    margin: 20px; /* Espaciado externo de 20 píxeles alrededor de la sección */
+}
+
+.producto {
+    background-color: white; /* Fondo blanco para cada producto */
+    padding: 20px; /* Espaciado interno de 20 píxeles */
+    border-radius: 5px; /* Bordes redondeados de 5 píxeles */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el producto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera alrededor del producto */
+    margin: 20px; /* Espaciado externo de 20 píxeles alrededor de la sección */
+    max-width: 300px; /* Ajusta el ancho máximo del producto */
+}
+
+.producto img {
+    width: 200px; /* La imagen toma el 100% del ancho del contenedor */
+    height: 400px; /* Altura fija para las imágenes */
+    object-fit: cover; /* La imagen se recorta para llenar el contenedor sin distorsionarse */
+    border-radius: 5px 5px 0 0; 
+}
+
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed; /* Fija el modal en la pantalla */
+    left: 0; /* Alinea el modal a la izquierda */
+    top: 40px; /* Alinea el modal en la parte superior */
+    width: 100%; /* Ancho completo del modal */
+    height: 100%; /* Altura completa del modal */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente oscuro */
+    justify-content: center; /* Centra horizontalmente el contenido del modal */
+    align-items: center; /* Centra verticalmente el contenido del modal */
+}
+
+.modal-contenido {
+    background-color: var(--color-background); /* Fondo rosa suave */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-width: 500px; /* Ancho máximo del modal */
+    width: 90%; /* Ancho relativo */
+    text-align: left; /* Texto alineado a la izquierda */
+    max-height: 80vh; /* Altura máxima del modal (80% de la altura de la ventana) */
+    overflow-y: auto; /* Scroll vertical interno */
+}
+
+.cerrar {
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón de cerrar */
+    color: var(--color-secondary); /* Color dorado */
+    float: right; /* Flota el botón de cerrar a la derecha */
+    font-size: 24px; /* Tamaño de fuente */
+}
+
+.modal-contenido h2 {
+    color: var(--color-primary); /* Rosa principal */
+    margin-top: 0; /* Sin margen superior */
+}
+
+.modal-contenido label {
+    display: block; /* Etiquetas como bloques */
+    margin-bottom: 10px; /* Margen inferior */
+    color: var(--color-text); /* Color del texto */
+}
+
+.modal-contenido input[type="text"],
+.modal-contenido input[type="number"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Margen inferior */
+    border: 1px solid var(--color-primary); /* Borde rosa */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el borde en el tamaño total */
+}
+
+.modal-contenido button {
+    background-color: var(--color-secondary); /* Fondo dorado */
+    color: var(--color-white); /* Texto blanco */
+    padding: 15px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    width: 100%; /* Ancho completo */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+.modal-contenido button:hover {
+    background-color: #B98F1E; /* Fondo dorado oscuro al pasar el ratón */
+}
+
+.oculto {
+    display: none; /* Oculta el modal de confirmación */
+}
+
+#compraConfirmada .modal-contenido {
+    text-align: center; /* Texto centrado */
+}
+
+#compraConfirmada .modal-contenido h2 {
+    font-size: 2em; /* Tamaño de fuente grande */
+    color: var(--color-primary); /* Color rosa */
+}
+
+#compraConfirmada .modal-contenido p {
+    color: var(--color-text); /* Color del texto */
+}
+
+#compraConfirmada .modal-contenido button {
+    background-color: var(--color-secondary); /* Fondo dorado */
+    color: var(--color-white); /* Texto blanco */
+    padding: 15px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+#compraConfirmada .modal-contenido button:hover {
+    background-color: #B98F1E; /* Fondo dorado oscuro al pasar el ratón */
+}

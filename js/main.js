@@ -147,6 +147,18 @@ const Utils = {
     }
 };
 
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto padre (evita el azul por defecto) */
+    outline: none; /* Elimina el resaltado al hacer clic (outline) */
+}
+
+a:hover, a:focus, a:active {
+    text-decoration: none; /* Elimina el subrayado al pasar el cursor o enfocar */
+    color: inherit; /* Mantiene el color heredado al interactuar */
+}
+
+
 // ==========================================================================
 // Inicialización
 // ==========================================================================

@@ -20,6 +20,7 @@
     
     <!-- Estilos principales -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/comprar_productos.css">
     
     <!-- Estilos de componentes -->
     <link rel="stylesheet" href="css/components/navigation.css">
@@ -38,14 +39,14 @@
     <!-- Header y Navegación -->
     <header>
         <nav class="nav" aria-label="Navegación principal">
-            <a href="assets/img/logo.jpg" class="logo" aria-label="Bellisima - Ir al inicio">BELLISIMA</a>
+            <a href="index.html" class="logo" aria-label="Bellisima - Ir al inicio">BELLISIMA</a>
             
             <!-- Navegación Desktop -->
             <div class="desktop-nav">
                 <div class="nav-links">
-                    <a href="inicio.html" aria-current="page">Inicio</a>
-                    <a href="salon.html">Salón</a>
-                    <a href="spa.html">Spa</a>
+                    <a href="index.html" aria-current="page">Inicio</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="servicios.html">Salón & Spa</a>
                     <a href="contacto.html">Contacto</a>
                 </div>
                 
@@ -57,7 +58,7 @@
                     </svg>
                     <span class="cart-badge" aria-label="Cantidad de items en el carrito">0</span>
                 </div>
-                <a href="#" class="shop-button">Shop</a>
+                <a href="comprar_productos.html" class="shop-button">Shop</a>
             </div>
 
             <!-- Navegación Mobile -->
@@ -115,15 +116,50 @@
                 <h1 class="hero-title">¿QUÉ QUIERES HACER HOY?</h1>
                 <div class="action-buttons">
                     <a href="citas.html" class="action-button">Reservar una cita</a>
-                    <a href="servicios.html" class="action-button">Ver servicios de Salón</a>
-                    <a href="servicios.html" class="action-button">Ver servicios de Spa</a>
-                    <a href="#" class="action-button">Comprar productos</a>
-                    <a href="#" class="action-button">Comprar un Gift Card Digital</a>
-                    <a href="#" class="action-button">Comprar un Gift Card Físico</a>
+                    <a href="servicios.html" class="action-button">Ver servicios de Salón & Spa </a>
+                    <a href="comprar_productos.html" class="action-button">Comprar productos</a>
+                    <a href="#" class="action-button">Comprar un Gift Card Digital & Físico</a>
                 </div>
             </div>
     </div>
     
+    <!-- Sección Productos -->
+    <div>
+        <br>
+        <br>
+        <h2>Descubre todos los productos que ofrecemos para ti</h2>
+        <h4>Encuentra tus marcas favoritas para el cuidado del cabello y la piel</H4>
+
+        <section class="productos">
+            <div class="producto">
+                <a href="comprar_productos.html">
+                <img src="assets/img/imagen_productoA.jpg" alt="Producto A"> <!-- Ruta a la imagen del Producto A -->
+                <h2>Set maquillaje</h2>
+                <p>Precio: S/50</p>
+                </a>
+            </div>
+            <div class="producto" >
+                <a  href="comprar_productos.html">
+                <img src="assets/img/imagen_productoB.jpg" alt="Producto B"> <!-- Ruta a la imagen del Producto B -->
+                <h2>Cremas piel</h2>
+                <p>Precio: S/40</p>
+                 </a>
+            </div>
+            <div class="producto" >
+                <a href="comprar_productos.html">
+                <img src="assets/img/imagen_productoC.jpg" alt="Producto C"> <!-- Ruta a la imagen del Producto C -->
+                <h2>Locion piel</h2>
+                <p>Precio: S/70</p>
+            </div>
+            <div class="producto" >
+                <a href="comprar_productos.html">
+                <img src="assets/img/imagen_productoD.jpg" alt="Producto D"> <!-- Ruta a la imagen del Producto D -->
+                <h2>Perfume floral</h2>
+                <p>Precio: S/90</p>
+                </a>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -159,11 +195,10 @@
             <div class="footer-section">
                 <h3 class="footer-title">Servicios</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Servicios de Salón</a></li>
-                    <li><a href="#">Servicios de Spa</a></li>
+                    <li><a href="#">Servicios de Salón & Spa</a></li>
                     <li><a href="#">Tratamientos Faciales</a></li>
                     <li><a href="#">Masajes</a></li>
-                    <li><a href="#">Productos</a></li>
+                    <li><a href="comprar_productos.html">Productos</a></li>
                 </ul>
             </div>
 
@@ -193,7 +228,7 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
-                        (123) 456-7890
+                        (01) 456-7890
                     </li>
                     <li>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

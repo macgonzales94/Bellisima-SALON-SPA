@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Meta tags básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Bellisima SALON & SPA</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <meta name="description" content="Bellisima Salon & Spa - Reserva tu cita para servicios de belleza y spa">
+    <meta name="keywords" content="reserva cita, salon belleza, spa, peluquería, tratamientos">
+    <meta name="author" content="Bellisima Salon & Spa">
+    
+    <title>Reserva tu Cita - Bellisima SALON & SPA</title>
+    
+    <!-- Precargar fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/citas.css">
+    
+    <!-- Estilos de componentes -->
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Reserva tu Cita - Bellisima SALON & SPA">
+    <meta property="og:description" content="Agenda tu cita en nuestro salón y spa">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://bellisimasalon.com/citas">
 </head>
+
 <body>
+
+    <!-- Header y Navegación -->
+    <header>
+        <nav class="nav" aria-label="Navegación principal">
+            <a href="index.html" class="logo" aria-label="Bellisima - Ir al inicio">BELLISIMA</a>
+            
+            <!-- Navegación Desktop -->
+            <div class="desktop-nav">
+
+                <div class="nav-links">
+                    <a href="index.html" aria-current="page">Inicio</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="salon.html">Salón</a>
+                    <a href="spa.html">Spa</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+                
+                <!-- Carrito -->
+                <div class="cart-icon" role="button" aria-label="Carrito de compras">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM20 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge" aria-label="Cantidad de items en el carrito">0</span>
+                </div>
+                <a href="comprar_productos.html" class="shop-button">Shop</a>
+                
+            </div>
+
+            <!-- Navegación Mobile -->
+            <div class="cart-container">
+                <div class="cart-icon" role="button" aria-label="Carrito de compras móvil">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM20 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge" aria-label="Cantidad de items en el carrito móvil">0</span>
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menú de navegación">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menú lateral móvil -->
+    <aside class="sidebar" aria-label="Menú móvil">
+            <div class="sidebar-header">
+                <a href="/" class="logo" aria-label="Bellisima - Ir al inicio">BELLISIMA</a>
+                <button class="close-button" aria-label="Cerrar menú">×</button>
+            </div>
+            <div class="sidebar-links">
+                <a href="index.html" class="active">Inicio</a>
+                <a href="servicios.html">Salón & Spa</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="#" class="shop-button">Shop</a>
+            </div>
+            <div class="legal-links">
+                <a href="#" rel="nofollow">Términos y condiciones</a>
+                <a href="#" rel="nofollow">Política de privacidad</a>
+            </div>
+    </aside>
+    
+    <!-- Overlay para menú móvil -->
+    <div class="overlay" aria-hidden="true"></div>
+    
+    <!-- Main Content -->
+
     <button onclick="topFunction()" id="topButton">&#8679; Volver al inicio</button>
     <h2>Contacto</h2>
 
@@ -34,34 +136,122 @@
         <p>Email: info@bellisimasalon.pe</p>
     </section>
 
-    <footer>
-        <h3>Síguenos en redes sociales</h3>
-        <ul>
-            <a href="#">Instagram</a><br>
-            <a href="#">Facebook</a><br>
-            <a href="#">TikTok</a><br>
-        </ul>
-        <p>&copy; 2025 Bellisima SALON & SPA. Todos los derechos reservados.</p>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sección de marca -->
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">BELLISIMA</a>
+                <p class="footer-description">
+                    Tu destino de belleza y bienestar. Ofrecemos servicios premium de salón y spa para realzar tu belleza natural.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Síguenos en Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Síguenos en Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Síguenos en Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sección de servicios -->
+            <div class="footer-section">
+                <h3 class="footer-title">Servicios</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Servicios de Salón</a></li>
+                    <li><a href="#">Servicios de Spa</a></li>
+                    <li><a href="#">Tratamientos Faciales</a></li>
+                    <li><a href="#">Masajes</a></li>
+                    <li><a href="#">Productos</a></li>
+                </ul>
+            </div>
+
+            <!-- Sección de soporte -->
+            <div class="footer-section">
+                <h3 class="footer-title">Soporte</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Sección de contacto -->
+            <div class="footer-section">
+                <h3 class="footer-title">Contacto</h3>
+                <ul class="contact-info">
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        123 Calle Principal, Ciudad
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        (123) 456-7890
+                    </li>
+                    <li>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        info@bellisimasalon.com
+                    </li>
+                </ul>
+                
+                <!-- Newsletter -->
+                <div class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Tu correo electrónico">
+                    <button class="newsletter-button">Suscribirse</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer inferior -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bellisima Salon & Spa. Todos los derechos reservados.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
     </footer>
+    <!-- Script principal -->
+    <script src="js/main.js" defer></script>
 
+    <!-- Script de Google Analytics (opcional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
-        // Función para volver al inicio
-        var topButton = document.getElementById("topButton");
-
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-                topButton.style.display = "block";
-            } else {
-                topButton.style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
     </script>
+
 </body>
 </html>
+
+
+
+
+
+
+

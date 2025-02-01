@@ -16,36 +16,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
     
-    <!-- Estilos CSS en orden de especificidad -->
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/components/navigation.css">
-    <link rel="stylesheet" href="../css/components/buttons.css">
-    <link rel="stylesheet" href="../css/components/cards.css">
-    <link rel="stylesheet" href="../css/components/footer.css">
-    <link rel="stylesheet" href="../css/pages/citas.css">
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/citas.css">
     
+    <!-- Estilos de componentes -->
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+
     <!-- Open Graph tags -->
     <meta property="og:title" content="Reserva tu Cita - Bellisima SALON & SPA">
     <meta property="og:description" content="Agenda tu cita en nuestro salón y spa">
-    <meta property="og:image" content="../assets/images/og-image.jpg">
+    <meta property="og:image" content="assets/images/og-image.jpg">
     <meta property="og:url" content="https://bellisimasalon.com/citas">
 </head>
 
 <body>
+
     <!-- Header y Navegación -->
     <header>
-        <nav aria-label="Navegación principal">
-            <a href="/" class="logo" aria-label="Bellisima - Ir al inicio">BELLISIMA</a>
+        <nav class="nav" aria-label="Navegación principal">
+            <a href="index.html" class="logo" aria-label="Bellisima - Ir al inicio">BELLISIMA</a>
             
             <!-- Navegación Desktop -->
             <div class="desktop-nav">
+
                 <div class="nav-links">
-                    <a href="inicio.html" aria-current="page">Inicio</a>
-                    <a href="salon.html">Salón</a>
-                    <a href="spa.html">Spa</a>
+                    <a href="index.html" aria-current="page">Inicio</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="servicios.html">Salón & Spa</a>
                     <a href="contacto.html">Contacto</a>
                 </div>
                 
@@ -57,7 +61,8 @@
                     </svg>
                     <span class="cart-badge" aria-label="Cantidad de items en el carrito">0</span>
                 </div>
-                <a href="#" class="shop-button">Shop</a>
+                <a href="comprar_productos.html" class="shop-button">Shop</a>
+                
             </div>
 
             <!-- Navegación Mobile -->
@@ -79,8 +84,9 @@
             </div>
         </nav>
     </header>
-        <!-- Menú lateral móvil -->
-        <aside class="sidebar" aria-label="Menú móvil">
+
+    <!-- Menú lateral móvil -->
+    <aside class="sidebar" aria-label="Menú móvil">
             <div class="sidebar-header">
                 <a href="/" class="logo" aria-label="Bellisima - Ir al inicio">BELLISIMA</a>
                 <button class="close-button" aria-label="Cerrar menú">×</button>
@@ -96,20 +102,21 @@
                 <a href="#" rel="nofollow">Términos y condiciones</a>
                 <a href="#" rel="nofollow">Política de privacidad</a>
             </div>
-        </aside>
+    </aside>
     
-        <!-- Overlay para menú móvil -->
-        <div class="overlay" aria-hidden="true"></div>
+    <!-- Overlay para menú móvil -->
+    <div class="overlay" aria-hidden="true"></div>
     
-        <!-- Main Content -->
+    <!-- Main Content -->
 
     <div class="container">
+
         <h2 class="page-title">Reserva tu Cita</h2>
         <p class="form-description">
             Para ofrecerte una atención exclusiva y personalizada, reserva tu cita con nosotros 
             completando el siguiente formulario:
         </p>
-        
+        <!-- Formululario -->
         <form class="appointment-form">
             <div class="form-group">
                 <label class="form-label" for="nombre">Nombre completo</label>
@@ -160,7 +167,7 @@
             </div>
 
             <div class="form-group">
-                <label for="hora">Hora preferida:</label>
+                <label class="hora" for="hora">Hora preferida:</label>
                 <select id="hora" name="hora" required>
                     <option value="">Seleccione una hora</option>
                     <option value="09:00">09:00</option>
@@ -193,6 +200,7 @@
     
             <button type="submit" class="submit-button">Reservar mi Cita</button>
         </form>
+        <!-- Fin Formululario -->
     
         <div class="notas-importantes">
             <h4>Notas Importantes:</h4>
@@ -203,6 +211,7 @@
                 <li>Los precios pueden variar según el largo y tipo de cabello</li>
             </ul>
         </div>
+
     </div>
     
 

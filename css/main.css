@@ -51,89 +51,7 @@ body {
     overflow-x: hidden; /* Oculta el desbordamiento horizontal */
 }
 
-/* ==========================================================================
-   Componentes de Navegación
-   ========================================================================== */
 
-/* Barra de navegación principal */
-.main-nav {
-    position: fixed; /* Fija la barra de navegación */
-    width: 100%; /* Ancho completo */
-    padding: var(--spacing-md) var(--spacing-lg); /* Espaciado interno */
-    background: rgba(255, 255, 255, 0.95); /* Fondo semi-transparente */
-    backdrop-filter: blur(10px); /* Efecto de desenfoque */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    transition: transform 0.3s ease; /* Transición suave */
-}
-
-/* Estilos para el logo en la barra de navegación */
-.main-nav .logo {
-    font-size: 1.5rem; /* Tamaño de fuente */
-    font-weight: 700; /* Grosor de la fuente */
-    color: var(--color-secondary); /* Color del texto */
-    text-decoration: none; /* Sin subrayado */
-    letter-spacing: 2px; /* Espaciado entre letras */
-    transition: color 0.3s ease; /* Transición suave */
-}
-
-/* Cambia el color del logo al hacer hover */
-.main-nav .logo:hover {
-    color: var(--color-primary); /* Color rosa al hacer hover */
-}
-
-/* Estilos para los enlaces de navegación */
-.main-nav .nav-links a {
-    color: var(--color-text); /* Color de texto */
-    text-decoration: none; /* Sin subrayado */
-    font-weight: 500; /* Grosor de la fuente */
-    transition: color 0.3s ease; /* Transición suave */
-}
-
-/* Cambia el color de los enlaces al hacer hover */
-.main-nav .nav-links a:hover {
-    color: var(--color-secondary); /* Color dorado al hacer hover */
-}
-
-/* ==========================================================================
-   Componentes de Botones
-   ========================================================================== */
-
-/* Botón de acción principal */
-.action-button {
-    background: linear-gradient(135deg, var(--color-secondary), #F0C14B); /* Fondo con gradiente */
-    color: var(--color-white); /* Color del texto */
-    padding: 0.8rem 2rem; /* Espaciado interno */
-    border-radius: var(--border-radius-full); /* Bordes redondeados */
-    text-decoration: none; /* Sin subrayado */
-    font-weight: 500; /* Grosor de la fuente */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cursor de puntero */
-    text-align: center; /* Centra el texto */
-    display: inline-block; /* Hace que el botón sea inline-block */
-}
-
-/* Efecto de levantar el botón al hacer hover */
-.action-button:hover {
-    transform: translateY(-2px); /* Levanta el botón */
-    box-shadow: var(--shadow-md); /* Añade sombra */
-}
-
-/* Botón secundario (shop) */
-.shop-button {
-    border: 1.5px solid var(--color-text); /* Borde */
-    padding: 0.5rem 2rem; /* Espaciado interno */
-    border-radius: var(--border-radius-full); /* Bordes redondeados */
-    text-decoration: none; /* Sin subrayado */
-    color: var(--color-text); /* Color del texto */
-    transition: all 0.3s ease; /* Transición suave */
-}
-
-/* Cambia el fondo y el color del texto al hacer hover */
-.shop-button:hover {
-    background: var(--color-text); /* Fondo oscuro */
-    color: var(--color-white); /* Texto blanco */
-}
 
 /* ==========================================================================
    Hero Section
@@ -197,6 +115,18 @@ body {
 .action-button:hover {
     background-color: rgba(255, 255, 255, 1); /* Fondo más opaco al pasar el mouse */
 }
+
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto padre (evita el azul por defecto) */
+    outline: none; /* Elimina el resaltado al hacer clic (outline) */
+}
+
+a:hover, a:focus, a:active {
+    text-decoration: none; /* Elimina el subrayado al pasar el cursor o enfocar */
+    color: inherit; /* Mantiene el color heredado al interactuar */
+}
+
 /* ==========================================================================
    Responsive Design
    ========================================================================== */
@@ -252,53 +182,4 @@ body {
     overflow: hidden; /* Oculta el desbordamiento */
     clip: rect(0, 0, 0, 0); /* Recorta el contenido */
     border: 0; /* Sin borde */
-}
-
-/* ==========================================================================
-   Layout Base - Estilos compartidos entre páginas
-   ========================================================================== */
-
-/* Reseteo básico */
-* {
-    margin: 0; /* Elimina los márgenes por defecto */
-    padding: 0; /* Elimina el padding por defecto */
-    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño del elemento */
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; /* Fuente alternativa */
-}
-
-/* Layout principal sin hero */
-.page-wrapper {
-    padding-top: 80px; /* Espaciado superior para la barra de navegación */
-    min-height: 100vh; /* Altura mínima de la ventana */
-    background: var(--color-background); /* Color de fondo */
-}
-
-/* Navegación principal */
-nav {
-    position: fixed; /* Fija la barra de navegación */
-    top: 0; /* Posición desde arriba */
-    width: 100%; /* Ancho completo */
-    height: 80px; /* Altura de la barra de navegación */
-    padding: 1rem 2rem; /* Espaciado interno */
-    background: white; /* Fondo blanco */
-    display: flex; /* Flexbox para alinear elementos */
-    justify-content: space-between; /* Espacio entre elementos */
-    align-items: center; /* Centra verticalmente los elementos */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra ligera */
-}
-
-/* Ajustes responsive para pantallas pequeñas */
-@media (max-width: 768px) {
-    .page-wrapper {
-        padding-top: 60px; /* Espaciado superior reducido para móviles */
-    }
-    
-    nav {
-        height: 60px; /* Altura reducida para móviles */
-        padding: 1rem; /* Espaciado interno reducido */
-    }
 }

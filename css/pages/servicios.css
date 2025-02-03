@@ -1,0 +1,173 @@
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto padre (evita el azul por defecto) */
+    outline: none; /* Elimina el resaltado al hacer clic (outline) */
+}
+
+a:hover, a:focus, a:active {
+    text-decoration: none; /* Elimina el subrayado al pasar el cursor o enfocar */
+    color: inherit; /* Mantiene el color heredado al interactuar */
+}
+
+/* Define las variables CSS globales */
+:root {
+    /* Paleta de colores basada en el logo */
+    --color-primary: #E5B5B5;    /* Rosa principal */
+    --color-secondary: #D4AF37;  /* Dorado */
+    --color-background: #F9F0F0; /* Fondo rosa suave */
+    --color-text: #333333;       /* Texto principal */
+    --color-text-light: #666666; /* Texto secundario */
+    --color-white: #FFFFFF;      /* Blanco */
+    
+    /* Espaciado */
+    --spacing-xs: 0.25rem; /* Espaciado extra pequeño */
+    --spacing-sm: 0.5rem;  /* Espaciado pequeño */
+    --spacing-md: 1rem;    /* Espaciado medio */
+    --spacing-lg: 2rem;    /* Espaciado grande */
+    --spacing-xl: 4rem;    /* Espaciado extra grande */
+
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra pequeña */
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12); /* Sombra media */
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra grande */
+
+    /* Bordes */
+    --border-radius-sm: 4px; /* Radio de borde pequeño */
+    --border-radius-md: 8px; /* Radio de borde medio */
+    --border-radius-lg: 16px; /* Radio de borde grande */
+    --border-radius-full: 9999px; /* Radio de borde circular */
+}
+/* ==========================================================================
+   Estilos base y configuración global
+   ========================================================================== */
+
+/* Aplicar estilos base al cuerpo de la página */
+body {
+    font-family: 'Playfair Display', serif; /* Fuente principal */
+    color: var(--color-text); /* Color del texto principal */
+    line-height: 1.6; /* Altura de línea */
+    background-color: var(--color-background); /* Color de fondo */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+}
+
+.titulo-pagina h1{
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    color: var(--color-text); /* Color del texto */
+    margin-bottom: 2rem; /* Espaciado inferior */
+    text-align: center; /* Centra el texto */
+    font-size: 2.5rem; /* Tamaño de fuente */
+    font-weight: 500; /* Grosor de la fuente */
+}
+
+/* Estilos para los encabezados */
+h1, h2, h3 {
+    color: var(--color-primary); /* Color principal para los títulos */
+    margin-bottom: var(--spacing-md); /* Espaciado inferior */
+}
+
+h1 {
+    font-size: 2.5rem; /* Tamaño de fuente para h1 */
+}
+
+h2 {
+    font-size: 2rem; /* Tamaño de fuente para h2 */
+}
+
+h3 {
+    font-size: 1.75rem; /* Tamaño de fuente para h3 */
+}
+
+/* Estilos para los párrafos */
+p {
+    color: var(--color-text-light); /* Color del texto secundario */
+    margin-bottom: var(--spacing-md); /* Espaciado inferior */
+}
+
+/* ==========================================================================
+   Estilos para la sección de servicios
+   ========================================================================== */
+
+#servicios {
+    padding: var(--spacing-xl) var(--spacing-md); /* Espaciado interno */
+    background-color: var(--color-white); /* Fondo blanco */
+    border-radius: var(--border-radius-md); /* Bordes redondeados */
+    box-shadow: var(--shadow-md); /* Sombra */
+    margin: var(--spacing-lg) auto; /* Margen exterior */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+#tratamientos-faciales {
+    padding: var(--spacing-xl) var(--spacing-md); /* Espaciado interno */
+    background-color: var(--color-white); /* Fondo blanco */
+    border-radius: var(--border-radius-md); /* Bordes redondeados */
+    box-shadow: var(--shadow-md); /* Sombra */
+    margin: var(--spacing-lg) auto; /* Margen exterior */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+#servicios-belleza {
+    padding: var(--spacing-xl) var(--spacing-md); /* Espaciado interno */
+    background-color: var(--color-white); /* Fondo blanco */
+    border-radius: var(--border-radius-md); /* Bordes redondeados */
+    box-shadow: var(--shadow-md); /* Sombra */
+    margin: var(--spacing-lg) auto; /* Margen exterior */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+.servicio {
+    background-color: var(--color-white); /* Fondo blanco */
+    padding: var(--spacing-md); /* Espaciado interno */
+    margin-bottom: var(--spacing-md); /* Espaciado inferior */
+    border-radius: var(--border-radius-md); /* Bordes redondeados */
+    box-shadow: var(--shadow-sm); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.servicio:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: var(--shadow-lg); /* Sombra más pronunciada */
+}
+
+.servicio h3 {
+    color: var(--color-secondary); /* Color dorado para los títulos de servicio */
+    margin-bottom: var(--spacing-sm); /* Espaciado inferior */
+}
+
+.servicio .precio {
+    font-weight: bold; /* Texto en negrita */
+    color: var(--color-primary); /* Color rosa para el precio */
+    margin-bottom: var(--spacing-sm); /* Espaciado inferior */
+}
+
+.servicio .duracion {
+    color: var(--color-text-light); /* Color de texto secundario */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+}
+
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Reduce el tamaño de fuente en móviles */
+    }
+
+    h2 {
+        font-size: 1.75rem; /* Reduce el tamaño de fuente en móviles */
+    }
+
+    h3 {
+        font-size: 1.5rem; /* Reduce el tamaño de fuente en móviles */
+    }
+
+    #servicios, #tratamientos-faciales, #servicios-belleza {
+        padding: var(--spacing-lg) var(--spacing-sm); /* Ajusta el espaciado en móviles */
+    }
+
+    .servicio {
+        padding: var(--spacing-sm); /* Ajusta el espaciado en móviles */
+    }
+}

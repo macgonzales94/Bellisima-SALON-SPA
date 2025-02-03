@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!-- Meta tags básicos -->
     <meta charset="UTF-8">
@@ -21,7 +22,7 @@
 
     <!-- Estilos principales -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/pages/comprar_productos.css"> <!-- Archivo principal de estilos -->
+    <link rel="stylesheet" href="css/pages/card.css"> <!-- Archivo principal de estilos -->
     
      <!-- Estilos de componentes -->
     <link rel="stylesheet" href="css/components/navigation.css"> <!-- Estilos para la navegación -->
@@ -102,118 +103,149 @@
             <a href="#" rel="nofollow">Política de privacidad</a> <!-- Enlace a la política de privacidad -->
         </div>
     </aside>
-    
+
     <br><br>
+    <br><br>
+
+    <h3>Filtro de Gift Cards</h3>
+
+    <div class="filtro">
+        <button onclick="filtrar('digital')">Gift Card Digital</button>
+        <button onclick="filtrar('fisica')">Gift Card Física</button>
+        <button onclick="filtrar('todas')">Mostrar Todas</button>
+    </div>
     
-    <!-- Main Content -->
     <main>
         <section class="productos">
-            <div class="producto" onclick="abrirFormulario('Producto A', 50)">
-                <img src="assets/img/imagen_productoA.jpg" alt="Producto A"> <!-- Ruta a la imagen del Producto A -->
-                <h2>Set maquillaje</h2>
-                <p>Precio: S/50</p>
+                <div class="producto digital" onclick="abrirFormulario('Producto A', 50)">
+                    <img src="assets/img/Card dg 1.jpg" alt="Producto A"> <!-- Ruta a la imagen del Producto A -->
+                    <h2> (Gift card) Parches Idrogel(Ojeras) </h2>
+                    <p>Precio: S/50</p>
+                </div>
+                <div class="producto digital" onclick="abrirFormulario('Producto B', 60)">
+                    <img src="assets/img/Card dg 2.jpg" alt="Producto B"> <!-- Ruta a la imagen del Producto B -->
+                    <h2> (Gift card) Rutina de Skincare </h2>
+                    <p>Precio: S/60</p>
+                </div>
+                <div class="producto digital" onclick="abrirFormulario('Producto C', 65)">
+                    <img src="assets/img/Card dg 3.jpg" alt="Producto C"> <!-- Ruta a la imagen del Producto C -->
+                    <h2>(Gift card) Locion Piel</h2>
+                    <p>Precio: S/65</p>
+                </div>
+                <div class="producto digital" onclick="abrirFormulario('Producto D', 90)">
+                    <img src="assets/img/Card dg 4.jpg" alt="Producto D"> <!-- Ruta a la imagen del Producto D -->
+                    <h2>(Gift card) Velas Aromaticas(fresas)</h2>
+                    <p>Precio: S/90</p>
+                </div>
+                <div class="producto digital" onclick="abrirFormulario('Producto E', 100)">
+                    <img src="assets/img/Card dg 5.jpg" alt="Producto G"> <!-- Ruta a la imagen del Producto E -->
+                    <h2>(Gift card) Frascos de Balsamo y Piedras Energeticas </h2>
+                    <p>Precio: S/100</p>
+                </div>
+                <div class="producto digital" onclick="abrirFormulario('Producto F', 90)">
+                    <img src="assets/img/Card dg 6.jpg" alt="Producto G"> <!-- Ruta a la imagen del Producto F -->
+                    <h2>(Gift card) Manicure </h2>
+                    <p>Precio: S/90</p>
+                </div>
+                <div class="producto digital" onclick="abrirFormulario('Producto G', 120)">
+                    <img src="assets/img/Card dg 7.webp" alt="Producto G"> <!-- Ruta a la imagen del Producto G -->
+                    <h2>(Gift card) Pack Parche Idrogel, lavado de cabello y 1 taza de te chino </h2>
+                    <p>Precio: S/120</p>
+                </div>
+                <div class="producto digital" onclick="abrirFormulario('Producto H', 70)">
+                    <img src="assets/img/Card dg 8.jpg" alt="Producto G"> <!-- Ruta a la imagen del Producto H -->
+                    <h2>(Gift card) Rutina Skincare  </h2>
+                    <p>Precio: S/70</p>
+                </div>
+        </section>
+
+        <section class="productos fisica">
+            <div class="producto fisica" onclick="abrirFormulario('Producto I', 70)">
+                    <img src="assets/img/Card fs 1.jpg" alt="Producto H"> <!-- Ruta a la imagen del Producto I -->
+                    <h2>(Gift card) Mascarilla Facial</h2>
+                    <p>Precio: S/70</p>
             </div>
-            <div class="producto" onclick="abrirFormulario('Producto B', 40)">
-                <img src="assets/img/imagen_productoB.jpg" alt="Producto B"> <!-- Ruta a la imagen del Producto B -->
-                <h2>Cremas piel</h2>
-                <p>Precio: S/40</p>
+            <div class="producto fisica" onclick="abrirFormulario('Producto J', 250)">
+                    <img src="assets/img/Card fs 2.jpg" alt="Producto I"> <!-- Ruta a la imagen del Producto J -->
+                    <h2>(Gift card) Baño de Petalos Aromatizado</h2>
+                    <p>Precio: S/250</p>
             </div>
-            <div class="producto" onclick="abrirFormulario('Producto C', 70)">
-                <img src="assets/img/imagen_productoC.jpg" alt="Producto C"> <!-- Ruta a la imagen del Producto C -->
-                <h2>Locion piel</h2>
-                <p>Precio: S/70</p>
+            <div class="producto fisica" onclick="abrirFormulario('Producto K', 98)">
+                    <img src="assets/img/Card fs 3.jpg" alt="Producto J"> <!-- Ruta a la imagen del Producto K -->
+                    <h2>(Gift card) hidratacion facial</h2>
+                    <p>Precio: S/98</p>
             </div>
-            <div class="producto" onclick="abrirFormulario('Producto D', 90)">
-                <img src="assets/img/imagen_productoD.jpg" alt="Producto D"> <!-- Ruta a la imagen del Producto D -->
-                <h2>Perfume floral</h2>
-                <p>Precio: S/90</p>
+                
+            <div class="producto fisica" onclick="abrirFormulario('Producto L', 140)">
+                    <img src="assets/img/Card fs 4.jpg" alt="Producto J"> <!-- Ruta a la imagen del Producto L -->
+                    <h2>(Gift card) Cosmeticos</h2>
+                    <p>Precio: S/115</p>
+            </div>
+            <div class="producto fisica" onclick="abrirFormulario('Producto M', 57)">
+                    <img src="assets/img/Card fs 5.jpg" alt="Producto J"> <!-- Ruta a la imagen del Producto M -->
+                    <h2>(Gift card) Mascarilla</h2>
+                    <p>Precio: S/57</p>
+            </div>
+            <div class="producto fisica" onclick="abrirFormulario('Producto O', 80)">
+                    <img src="assets/img/Card fs 6.jpg" alt="Producto J"> <!-- Ruta a la imagen del Producto O -->
+                    <h2>(Gift card) Mascarilla de Palta</h2>
+                    <p>Precio: S/80</p>
+            </div>
+            <div class="producto fisica" onclick="abrirFormulario('Producto P', 70)">
+                    <img src="assets/img/Card fs 7.jpg" alt="Producto J"> <!-- Ruta a la imagen del Producto P -->
+                    <h2>(Gift card) Cosmeticos</h2>
+                    <p>Precio: S/70</p>
+            </div>
+            <div class="producto fisica" onclick="abrirFormulario('Producto Q', 95)">
+                    <img src="assets/img/Card fs 8.jpg" alt="Producto J"> <!-- Ruta a la imagen del Producto Q -->
+                    <h2>(Gift card) Perfume Bahia </h2>
+                    <p>Precio: S/95</p>
             </div>
         </section>
-        <section class="productos">
-            <div class="producto" onclick="abrirFormulario('Producto G', 120)">
-                <img src="assets/img/imagen_productoG.jpg" alt="Producto G"> <!-- Ruta a la imagen del Producto G -->
-                <h2>Removedor</h2>
-                <p>Precio: S/12</p>
-            </div>
-            <div class="producto" onclick="abrirFormulario('Producto H', 180)">
-                <img src="assets/img/imagen_productoH.jpg" alt="Producto H"> <!-- Ruta a la imagen del Producto H -->
-                <h2>Mascarilla</h2>
-                <p>Precio: S/18</p>
-            </div>
-            <div class="producto" onclick="abrirFormulario('Producto I', 250)">
-                <img src="assets/img/imagen_productoI.jpg" alt="Producto I"> <!-- Ruta a la imagen del Producto I -->
-                <h2>Cremas Premiun</h2>
-                <p>Precio: S/250</p>
-            </div>
-            <div class="producto" onclick="abrirFormulario('Producto J', 180)">
-                <img src="assets/img/imagen_productoJ.jpg" alt="Producto J"> <!-- Ruta a la imagen del Producto J -->
-                <h2>Cosmeticos</h2>
-                <p>Precio: S/180</p>
-            </div>
-        </section>
-        <section class="productos">
-            <div class="producto" onclick="abrirFormulario('Producto M', 450)">
-                <img src="assets/img/imagen_productoM.jpg" alt="Producto M"> <!-- Ruta a la imagen del Producto M -->
-                <h2>Set Shampoos</h2>
-                <p>Precio: S/50</p>
-            </div>
-            <div class="producto" onclick="abrirFormulario('Producto N', 40)">
-                <img src="assets/img/imagen_productoN.jpg" alt="Producto N"> <!-- Ruta a la imagen del Producto N -->
-                <h2>Cremas cabello</h2>
-                <p>Precio: S/40</p>
-            </div>
-            <div class="producto" onclick="abrirFormulario('Producto O', 50)">
-                <img src="assets/img/imagen_productoO.jpg" alt="Producto O"> <!-- Ruta a la imagen del Producto O -->
-                <h2>Crema hidratante</h2>
-                <p>Precio: S/50</p>
-            </div>
-            <div class="producto" onclick="abrirFormulario('Producto P', 60)">
-                <img src="assets/img/imagen_productoP.jpg" alt="Producto P"> <!-- Ruta a la imagen del Producto P -->
-                <h2>Crema floral</h2>
-                <p>Precio: S/60</p>
-            </div>
-        </section>
-    </main>
     
+    </main>    
+
     <div id="modalCompra" class="modal">
-        <div class="modal-contenido">
-            <span class="cerrar" onclick="cerrarFormulario()">&times;</span>
-            <h2>Detalles de La Compra</h2>
-            <p id="productoInfo"></p>
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" min="1" value="1" onchange="actualizarCosto()">
-            
-            <label for="tarjeta">Nombres y Apellidos:</label>
-            <input type="text" id="datos" placeholder="Nombres y Apellidos">
-            
-            <label for="tarjeta">Tarjeta de crédito:</label>
-            <input type="text" id="tarjeta" placeholder="Número de tarjeta"><br>
-            
-            <label for="fechaVencimiento">Fecha de vencimiento:</label>
-            <input type="number" id="tarjeta" placeholder="Fecha de vencimiento">
-
-            <label for="cvv">CVV:</label>
-            <input type="number" id="tarjeta" placeholder="CVV"><br>
-            
-            <label for="direccion">Dirección de envío:</label>
-            <input type="text" id="direccion" placeholder="Dirección">
-            
-            <p id="totalCompra"></p>
-            <button onclick="confirmarCompra()">Comprar</button>
-        </div>
-    </div>
+            <div class="modal-contenido">
+                <span class="cerrar" onclick="cerrarFormulario()">&times;</span>
+                <h2>Detalles de La Compra</h2>
+                <p id="productoInfo"></p>
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" min="1" value="1" onchange="actualizarCosto()">
+                
+                <label for="tarjeta">Nombres y Apellidos:</label>
+                <input type="text" id="datos" placeholder="Nombres y Apellidos">
+                
+                <label for="tarjeta">Tarjeta de crédito:</label>
+                <input type="text" id="tarjeta" placeholder="Número de tarjeta"><br>
+                
+                <label for="fechaVencimiento">Fecha de vencimiento:</label>
+                <input type="number" id="tarjeta" placeholder="Fecha de vencimiento">
     
+                <label for="cvv">CVV:</label>
+                <input type="number" id="tarjeta" placeholder="CVV"><br>
+                
+                <label for="direccion">Dirección de envío:</label>
+                <input type="text" id="direccion" placeholder="Dirección">
+                
+                <p id="totalCompra"></p>
+                <button onclick="confirmarCompra()">Comprar</button>
+            </div>
+    
+    </div>
+        
     <div id="compraConfirmada" class="modal oculto">
-        <div class="modal-contenido">
-            <h2>✔ Compra Exitosa</h2>
-            <p>¡Gracias por tu compra!</p>
-            <button onclick="cerrarConfirmacion()">Aceptar</button>
-        </div>
+            <div class="modal-contenido">
+                <h2>✔ Compra Exitosa</h2>
+                <p>¡Gracias por tu compra!</p>
+                <button onclick="cerrarConfirmacion()">Aceptar</button>
+            </div>
     </div>
-
-    <div class="overlay" aria-hidden="true"></div> <!-- Superposición para el menú móvil -->
     
-    <!-- Footer -->
+    <div class="overlay" aria-hidden="true"></div> <!-- Superposición para el menú móvil -->
+        
+        
+     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <!-- Sección de marca -->
@@ -292,13 +324,17 @@
         </div>
     </footer>
 
+    
     <!-- Script principal -->
     <script src="js/main.js" defer></script> <!-- Archivo principal de JavaScript -->
-    <script src="js/comprar_productos.js" defer></script>
-
-    <!-- Script de Google Analytics (opcional) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> <!-- Script de Google Analytics -->
+    <script src="js/cardForm.js" defer></script>
+    <script src="js/cardProductos.js" defer></script>
     <script src="js/windowsDataLayer.js" defer></script>
+    <script src="js/giftCardFilter.js" defer></script>
 
+     <!-- Script de Google Analytics (opcional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> <!-- Script de Google Analytics -->
+        
 </body>
 </html>
+    

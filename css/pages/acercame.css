@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuentes y colores */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f8f4e6; 
+    color: #3e3e3e; 
+}
+
+
+
+/* Estilos para la sección principal */
+
+main {
+    background-image: url('xd.png'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed;
+    padding: 40px 20px;
+    color: #3e3e3e; 
+}
+
+.hero {
+    background-color: #f5f5dc; 
+    color: #3e3e3e; 
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #3e3e3e;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #d48b56;
+}
+
+/* Sección de servicios */
+.services {
+    background-color: #f8f4e6;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #3e3e3e;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33% - 20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 50px; 
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #3e3e3e;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #7e7e7e;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #fff8e1;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #3e3e3e;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.social-links a:hover img {
+    transform: scale(1.1);
+}
+
+/* Estilos para la navegación móvil */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: none;
+        background-color: #f8f4e6;
+        padding: 20px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-toggle[aria-expanded="true"] + .mobile-menu {
+        display: block;
+    }
+
+    .mobile-menu a {
+        text-decoration: none;
+        color: #3e3e3e;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+}
+

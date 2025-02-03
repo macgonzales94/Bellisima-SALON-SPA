@@ -21,7 +21,7 @@
     <!-- Estilos principales -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/pages/comprar_productos.css">
-    
+    <link rel="stylesheet" href="css/pages/card.css">
     <!-- Estilos de componentes -->
     <link rel="stylesheet" href="css/components/navigation.css">
     <link rel="stylesheet" href="css/components/buttons.css">
@@ -45,8 +45,8 @@
             <div class="desktop-nav">
                 <div class="nav-links">
                     <a href="index.html" aria-current="page">Inicio</a>
-                    <a href="nosotros.html">Nosotros</a>
                     <a href="servicios.html">Salón & Spa</a>
+                    <a href="acerca.html">Acerca de Bellisima</a>
                     <a href="contacto.html">Contacto</a>
                 </div>
                 
@@ -118,7 +118,7 @@
                     <a href="citas.html" class="action-button">Reservar una cita</a>
                     <a href="servicios.html" class="action-button">Ver servicios de Salón & Spa </a>
                     <a href="comprar_productos.html" class="action-button">Comprar productos</a>
-                    <a href="#" class="action-button">Comprar un Gift Card Digital & Físico</a>
+                    <a href="card.html" class="action-button">Comprar un Gift Card Digital & Físico</a>
                 </div>
             </div>
     </div>
@@ -160,6 +160,47 @@
             </div>
         </section>
     </div>
+
+    <!-- Fin Sección Productos -->
+    <div>
+         <br>
+        <h2>Vive la experiencia BELLISIMA con nuestras Gift Cards</h2>
+        <h4>ERegala o regálate un momento único en nuestros salones y spa</h4>
+
+        <section class="productos">
+            <div class="producto digital">
+                <a href="card.html">
+                <img src="assets/img/Card dg 1.jpg" alt="Producto A"> <!-- Ruta a la imagen del Producto A -->
+                <h2> (Gift card) Parches Idrogel(Ojeras) </h2>
+                <p>Precio: S/50</p>
+                </a>
+            </div>
+            <div class="producto digital" >
+                <a href="card.html">
+                <img src="assets/img/Card dg 2.jpg" alt="Producto B"> <!-- Ruta a la imagen del Producto B -->
+                <h2> (Gift card) Rutina de Skincare </h2>
+                <p>Precio: S/60</p>
+                </a>
+            </div>
+            <div class="producto digital" >
+                <a href="card.html">
+                <img src="assets/img/Card dg 3.jpg" alt="Producto C"> <!-- Ruta a la imagen del Producto C -->
+                <h2>(Gift card) Locion Piel</h2>
+                <p>Precio: S/65</p>
+                 </a>
+            </div>
+            <div class="producto digital">
+                <a href="card.html">
+                <img src="assets/img/Card dg 4.jpg" alt="Producto D"> <!-- Ruta a la imagen del Producto D -->
+                <h2>(Gift card) Velas Aromaticas(fresas)</h2>
+                <p>Precio: S/90</p>
+            </a>
+            </div>
+        </section>
+    </div>
+    <!-- Gift Card -->
+
+    <!-- Fin Gift Card -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -263,11 +304,6 @@
 
     <!-- Script de Google Analytics (opcional) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <script src="js/windowsDataLayer.js" defer></script>
 </body>
 </html>

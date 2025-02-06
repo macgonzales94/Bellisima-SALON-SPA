@@ -1,0 +1,238 @@
+/* ==========================================================================
+   Estilos específicos para la página de Citas
+   ========================================================================== */
+
+/* Reset y estilos base */
+* {
+    margin: 0; /* Elimina los márgenes por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño del elemento */
+}
+
+html {
+    font-size: 16px; /* Tamaño de fuente base */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+body {
+    font-family: 'Playfair Display', serif; /* Fuente principal */
+    color: var(--color-texto); /* Color de texto principal */
+    line-height: 1.6; /* Altura de línea */
+    background-color: var(--color-fondo); /* Color de fondo */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+}
+
+/* Layout principal 
+   Establece el contenedor principal y su espaciado respecto al nav fijo */
+.contenedor {
+    max-width: 800px; /* Ancho máximo */
+    margin: 80px auto 
+    2rem; /* Margen superior para el nav fijo */
+    padding: 0 2rem; /* Espaciado interno */
+    position: relative; /* Posición relativa */
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Encabezado de página
+   Estilos para el título principal y descripción */
+.titulo-pagina {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    color: var(--color-texto); /* Color del texto */
+    margin-bottom: 2rem; /* Espaciado inferior */
+    text-align: center; /* Centra el texto */
+    font-size: 2.5rem; /* Tamaño de fuente */
+    font-weight: 500; /* Grosor de la fuente */
+}
+
+.descripcion-formulario {
+    text-align: center; /* Centra el texto */
+    margin-bottom: 2rem; /* Espaciado inferior */
+    color: var(--color-texto-claro); /* Color de texto más claro */
+    line-height: 1.6; /* Altura de línea */
+    max-width: 600px; /* Ancho máximo */
+    margin-left: auto; /* Centra el contenedor */
+    margin-right: auto; /* Centra el contenedor */
+}
+
+/* Formulario principal
+   Estilos del contenedor del formulario y su sombreado */
+.formulario-cita {
+    background: var(--color-blanco); /* Fondo blanco */
+    padding: 2.5rem; /* Espaciado interno */
+    border-radius: var(--border-radius-lg); /* Bordes redondeados */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    margin-bottom: 2rem; /* Espaciado inferior */
+}
+
+/* Grupos de formulario
+   Contenedores para cada campo del formulario */
+.grupo-formulario {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    margin-bottom: 1.5rem; /* Espaciado inferior */
+}
+
+/* Etiquetas de formulario
+   Estilos para las etiquetas de los campos */
+.etiqueta-formulario {
+    display: block; /* Hace que la etiqueta sea un bloque */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+    color: var(--color-texto); /* Color del texto */
+    font-weight: 500; /* Grosor de la fuente */
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+}
+
+/* Campos de entrada
+   Estilos compartidos para todos los inputs */
+.entrada-formulario {
+    width: 100%; /* Ancho completo */
+    padding: 0.8rem; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde */
+    border-radius: var(--border-radius-sm); /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Estados de los campos
+   Estilos para focus y hover de los inputs */
+.entrada-formulario:focus,
+.seleccion-formulario:focus {
+    outline: none; /* Sin contorno */
+    border-color: var(--color-secundario); /* Cambia el color del borde al hacer focus */
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); /* Sombra al hacer focus */
+}
+
+/* Select personalizado
+   Estilos específicos para los campos select */
+.seleccion-formulario {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    width: 100%; /* Ancho completo */
+    padding: 0.8rem; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde */
+    border-radius: var(--border-radius-sm); /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de puntero */
+    background-color: var(--color-blanco); /* Fondo blanco */
+    appearance: none; /* Elimina el estilo por defecto del select */
+    background-image: url("data:image/svg+xml,..."); /* Ícono personalizado */
+    background-repeat: no-repeat; /* Sin repetición del ícono */
+    background-position: right 0.8rem center; /* Posición del ícono */
+}
+
+/* Grupos de opciones en selects
+   Estilos para los optgroup dentro de selects */
+optgroup {
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    color: var(--color-secundario); /* Color del texto */
+    font-weight: 500; /* Grosor de la fuente */
+}
+
+/* Área de texto
+   Estilos específicos para textareas */
+.area-texto {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 100px; /* Altura mínima */
+    line-height: 1.5; /* Altura de línea */
+}
+
+/* Checkbox personalizado
+   Estilos para el contenedor del checkbox y su label */
+.etiqueta-casilla {
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 0.5rem; /* Espacio entre elementos */
+    cursor: pointer; /* Cursor de puntero */
+    font-size: 0.9rem; /* Tamaño de fuente pequeño */
+    color: var(--color-texto-claro); /* Color de texto más claro */
+}
+
+.casilla-formulario {
+    width: 18px; /* Ancho del checkbox */
+    height: 18px; /* Altura del checkbox */
+    cursor: pointer; /* Cursor de puntero */
+    accent-color: var(--color-secundario); /* Color del checkbox */
+}
+
+/* Botón de envío
+   Estilos para el botón principal del formulario */
+.boton-enviar {
+    background: linear-gradient(135deg, var(--color-secundario), #F0C14B); /* Fondo con gradiente */
+    color: var(--color-blanco); /* Color del texto */
+    padding: 1rem 2rem; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: var(--border-radius-full); /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de puntero */
+    width: 100%; /* Ancho completo */
+    transition: all 0.3s ease; /* Transición suave */
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+}
+
+.boton-enviar:hover {
+    transform: translateY(-2px); /* Efecto de levantar al hacer hover */
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2); /* Sombra al hacer hover */
+}
+
+/* Sección de notas importantes
+   Estilos para el contenedor de notas y su contenido */
+.notas-importantes {
+    background: rgba(229, 181, 181, 0.1); /* Fondo semi-transparente */
+    padding: 1.5rem; /* Espaciado interno */
+    border-radius: var(--border-radius-lg); /* Bordes redondeados */
+    margin-top: 2rem; /* Espaciado superior */
+    border: 1px solid rgba(229, 181, 181, 0.2); /* Borde */
+}
+
+.notas-importantes h4 {
+    color: var(--color-secundario); /* Color del texto */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    font-size: 1.2rem; /* Tamaño de fuente */
+}
+
+.notas-importantes ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+}
+
+.notas-importantes li {
+    margin-bottom: 0.8rem; /* Espaciado inferior */
+    padding-left: 1.5rem; /* Espaciado interno */
+    position: relative; /* Posición relativa */
+    line-height: 1.6; /* Altura de línea */
+    color: var(--color-texto-claro); /* Color de texto más claro */
+}
+
+.notas-importantes li::before {
+    content: "•"; /* Añade un punto */
+    color: var(--color-secundario); /* Color del punto */
+    position: absolute; /* Posición absoluta */
+    left: 0; /* Posición desde la izquierda */
+    font-size: 1.2rem; /* Tamaño de fuente */
+}
+
+/* Responsive
+   Ajustes para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 0 1rem; /* Espaciado interno reducido */
+        margin-top: 60px; /* Margen superior reducido para el nav fijo */
+    }
+
+    .formulario-cita {
+        padding: 1.5rem; /* Espaciado interno reducido */
+    }
+
+    .titulo-pagina {
+        font-size: 2rem; /* Tamaño de fuente reducido */
+    }
+
+    .grupo-formulario {
+        margin-bottom: 1rem; /* Espaciado inferior reducido */
+    }
+
+    .boton-enviar {
+        padding: 0.8rem 1.5rem; /* Espaciado interno reducido */
+    }
+}

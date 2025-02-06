@@ -1,0 +1,101 @@
+/* frontend/css/pages/admin/dashboard.css */
+.admin-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+ }
+ 
+ .admin-sidebar {
+    background-color: var(--color-primary);
+    padding: var(--spacing-md);
+    color: var(--color-white);
+ }
+ 
+ .admin-logo {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+ }
+ 
+ .admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+ }
+ 
+ .admin-nav a {
+    padding: var(--spacing-sm);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+ }
+ 
+ .admin-nav a.active {
+    background-color: rgba(255,255,255,0.1);
+ }
+ 
+ .admin-main {
+    padding: var(--spacing-lg);
+    background-color: var(--color-background);
+ }
+ 
+ .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+ }
+ 
+ .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+ }
+ 
+ .stat-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+ }
+ 
+ .stat-card h3 {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+ }
+ 
+ .stat-card p {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-weight: bold;
+ }
+ 
+ .recent-orders {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+ }
+ 
+ table {
+    width: 100%;
+    border-collapse: collapse;
+ }
+ 
+ th, td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--color-background);
+ }
+ 
+ .logout-btn {
+    margin-top: auto;
+    padding: var(--spacing-sm);
+    background-color: rgba(255,255,255,0.1);
+    border: none;
+    color: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+ }

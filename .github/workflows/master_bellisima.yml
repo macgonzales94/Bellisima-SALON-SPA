@@ -19,14 +19,14 @@ jobs:
         node-version: '18.x'
     
     - name: npm install and build
-      working-directory: Bellisima-SALON-SPA/backend
+      working-directory: backend
       run: |
         npm install
         npm run iniciar
     
     - name: Zip artifact for deployment
-      working-directory: Bellisima-SALON-SPA/backend
-      run: zip -r ../../release.zip .
+      working-directory: backend
+      run: zip -r ../release.zip .
     
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v4

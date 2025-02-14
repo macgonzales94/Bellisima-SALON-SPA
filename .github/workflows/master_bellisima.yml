@@ -17,16 +17,6 @@ jobs:
       with:
         node-version: '20.x'
     
-    - name: Verificar estructura del proyecto
-      run: |
-        pwd
-        ls -la
-        find . -name "package.json"
-    
-    - name: Navegar al directorio del backend
-      run: |
-        cd Bellisima-SALON-SPA/backend
-    
     - name: Instalar dependencias
       working-directory: Bellisima-SALON-SPA/backend
       run: npm ci
@@ -42,7 +32,7 @@ jobs:
     - name: Comprimir artefacto para despliegue
       working-directory: Bellisima-SALON-SPA/backend
       run: zip -r ../../release.zip .
-    
+
     - name: Subir artefacto para trabajo de despliegue
       uses: actions/upload-artifact@v3
       with:
@@ -58,22 +48,18 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: node-app
-
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
-      
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9EE7EAFE80A4400498B55B4AA513E04B }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A647789121D346E98A63218075ECD192 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E1CD65E8443A404CA9D25CA36D5CBD4F }}
-
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'bellisima'
-          slot-name: 'Production'
-          package: .
-          
+    
+    - name: Login to Azure
+      uses: azure/login@v2
+      with:
+        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9EE7EAFE80A4400498B55B4AA513E04B }}
+        tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A647789121D346E98A63218075ECD192 }}
+        subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E1CD65E8443A404CA9D25CA36D5CBD4F }}
+    
+    - name: 'Desplegar en Azure Web App'
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: 'bellisima'
+        slot-name: 'Production'
+        package: release.zip

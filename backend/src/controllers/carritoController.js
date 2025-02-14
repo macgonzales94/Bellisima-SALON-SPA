@@ -1,6 +1,7 @@
 // controllers/carritoController.js
 const Carrito = require('../models/Carrito');
 const Producto = require('../models/Producto');
+const jwt = require('jsonwebtoken');
 
 const carritoController = {
     // Obtener el carrito del usuario
@@ -169,6 +170,116 @@ const carritoController = {
             console.error('Error al eliminar producto:', error);
             res.status(500).json({
                 mensaje: 'Error al eliminar producto',
+                error: error.message
+            });
+        }
+    },
+
+     // Transferir carrito temporal a usuario autenticado
+     transferirCarritoTemp: async (req, res) => {
+        try {
+            const { productos } = req.body;
+            
+            // Buscar o crear carrito del usuario
+            let carrito = await Carrito.findOne({
+                usuario: req.usuario._id,
+                estado: 'activo'
+            });
+
+            if (!carrito) {
+                carrito = new Carrito({
+                    usuario: req.usuario._id,
+                    productos: []
+                });
+            }
+
+            // Agregar productos del carrito temporal
+            for (const item of productos) {
+                const productoExistente = carrito.productos.find(
+                    p => p.producto.toString() === item.producto._id
+                );
+
+                if (productoExistente) {
+                    productoExistente.cantidad += item.cantidad;
+                } else {
+                    carrito.productos.push({
+                        producto: item.producto._id,
+                        cantidad: item.cantidad
+                    });
+                }
+            }
+
+            await carrito.save();
+            res.json({
+                mensaje: 'Carrito transferido exitosamente',
+                carrito
+            });
+        } catch (error) {
+            res.status(500).json({
+                mensaje: 'Error al transferir carrito',
+                error: error.message
+            });
+        }
+    },
+
+    sincronizar: async (req, res) => {
+        try {
+            const { productos } = req.body;
+            const usuarioId = req.usuario._id;
+
+            // Buscar o crear el carrito del usuario
+            let carrito = await Carrito.findOne({ usuario: usuarioId });
+            
+            if (!carrito) {
+                carrito = new Carrito({
+                    usuario: usuarioId,
+                    productos: []
+                });
+            }
+
+            // Validar y agregar cada producto
+            for (const item of productos) {
+                // Verificar si el producto existe
+                const producto = await Producto.findById(item.producto);
+                if (!producto) {
+                    continue; // Saltar productos que no existen
+                }
+
+                // Verificar si el producto ya está en el carrito
+                const productoExistente = carrito.productos.find(
+                    p => p.producto.toString() === item.producto
+                );
+
+                if (productoExistente) {
+                    // Actualizar cantidad
+                    productoExistente.cantidad += item.cantidad;
+                } else {
+                    // Agregar nuevo producto
+                    carrito.productos.push({
+                        producto: item.producto,
+                        cantidad: item.cantidad,
+                        precioUnitario: producto.precio
+                    });
+                }
+            }
+
+            // Recalcular el total
+            carrito.total = carrito.productos.reduce((total, item) => {
+                return total + (item.precioUnitario * item.cantidad);
+            }, 0);
+
+            // Guardar cambios
+            await carrito.save();
+
+            res.json({
+                mensaje: 'Carrito sincronizado exitosamente',
+                carrito
+            });
+
+        } catch (error) {
+            console.error('Error al sincronizar carrito:', error);
+            res.status(500).json({
+                mensaje: 'Error al sincronizar el carrito',
                 error: error.message
             });
         }

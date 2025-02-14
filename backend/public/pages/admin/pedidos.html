@@ -1,0 +1,143 @@
+<!-- frontend/pages/admin/pedidos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pedidos - Bellisima SALON & SPA</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/pages/admin/dashboard.css">
+    <link rel="stylesheet" href="../../css/pages/admin/pedidos.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>BELLISIMA</h2>
+                <p>Panel Administrativo</p>
+            </div>
+            <nav class="admin-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="productos.html">Productos</a>
+                <a href="pedidos.html" class="active">Pedidos</a>
+                <a href="usuarios.html">Usuarios</a>
+                <a href="../../index.html">Volver al sitio</a>
+                <button id="logoutBtn" class="logout-btn">Cerrar Sesión</button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Gestión de Pedidos</h1>
+                <div class="header-actions">
+                    <select id="filterStatus" class="filter-select">
+                        <option value="">Todos los estados</option>
+                        <option value="pendiente">Pendientes</option>
+                        <option value="procesando">Procesando</option>
+                        <option value="enviado">Enviados</option>
+                        <option value="entregado">Entregados</option>
+                        <option value="cancelado">Cancelados</option>
+                    </select>
+                    <input 
+                        type="text" 
+                        id="searchOrder" 
+                        placeholder="Buscar por ID o cliente..."
+                        class="search-input"
+                    >
+                </div>
+            </header>
+
+            <!-- Tabla de pedidos -->
+            <div class="orders-table-container">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>ID Pedido</th>
+                            <th>Cliente</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Método de Pago</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!-- JS llenará esto -->
+                    </tbody>
+                </table>
+
+                <!-- Paginación -->
+                <div class="pagination">
+                    <button id="prevPage" class="page-btn">Anterior</button>
+                    <span id="currentPage">Página 1 de 1</span>
+                    <button id="nextPage" class="page-btn">Siguiente</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal de detalles del pedido -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Detalles del Pedido</h2>
+            <div id="orderDetails">
+                <div class="order-info">
+                    <h3>Información del Pedido</h3>
+                    <p><strong>ID:</strong> <span id="orderId"></span></p>
+                    <p><strong>Fecha:</strong> <span id="orderDate"></span></p>
+                    <p><strong>Estado:</strong> 
+                        <select id="orderStatus">
+                            <option value="pendiente">Pendiente</option>
+                            <option value="procesando">Procesando</option>
+                            <option value="enviado">Enviado</option>
+                            <option value="entregado">Entregado</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+                    </p>
+                </div>
+                
+                <div class="customer-info">
+                    <h3>Información del Cliente</h3>
+                    <p><strong>Nombre:</strong> <span id="customerName"></span></p>
+                    <p><strong>Email:</strong> <span id="customerEmail"></span></p>
+                    <p><strong>Teléfono:</strong> <span id="customerPhone"></span></p>
+                </div>
+
+                <div class="shipping-info">
+                    <h3>Dirección de Envío</h3>
+                    <p id="shippingAddress"></p>
+                </div>
+
+                <div class="products-list">
+                    <h3>Productos</h3>
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unit.</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderProducts">
+                            <!-- JS llenará esto -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="order-totals">
+                    <p><strong>Subtotal:</strong> S/. <span id="orderSubtotal"></span></p>
+                    <p><strong>Envío:</strong> S/. <span id="orderShipping"></span></p>
+                    <p class="total"><strong>Total:</strong> S/. <span id="orderTotal"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/admin/pedidos.js"></script>
+    <script src="../../js/admin/autenticacion.js"></script>
+</body>
+</html>

@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon ./src/app.js"
+    "dev": "nodemon ./src/app.js",
+    "copiar-frontend": "node scripts/copiar.frontend.Script.js",
+    "construir": "npm run copiar-frontend",
+    "iniciar": "node src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -18,10 +20,14 @@
     "culqi-node": "^2.1.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "fs-extra": "^11.3.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.6",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.10.0"
+    "nodemailer": "^6.10.0",
+    "path": "^0.12.7",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
   }
 }

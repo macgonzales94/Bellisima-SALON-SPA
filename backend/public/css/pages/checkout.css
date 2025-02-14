@@ -1,0 +1,205 @@
+/* checkout.css */
+
+/* Estilos generales del contenedor */
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 2rem;
+}
+
+h1 {
+   text-align: center;
+   color: #333;
+   margin-bottom: 2rem;
+}
+
+/* Grid de dos columnas para el checkout */
+.checkout-container {
+   display: grid;
+   grid-template-columns: 1.5fr 1fr;
+   gap: 2rem;
+   margin-top: 2rem;
+}
+
+/* Estilos para el formulario */
+.checkout-form {
+   background: white;
+   padding: 2rem;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+   margin-bottom: 1.5rem;
+}
+
+.form-row {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 1rem;
+}
+
+label {
+   display: block;
+   margin-bottom: 0.5rem;
+   color: #555;
+   font-weight: 500;
+}
+
+.form-control {
+   width: 100%;
+   padding: 0.75rem;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+   font-size: 1rem;
+   transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+   outline: none;
+   border-color: #E5B5B5;
+   box-shadow: 0 0 0 2px rgba(229, 181, 181, 0.2);
+}
+
+/* Estilos para el resumen de compra */
+.resumen-compra {
+   background: white;
+   padding: 2rem;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+   position: sticky;
+   top: 2rem;
+}
+
+.resumen-productos {
+   margin-bottom: 1.5rem;
+}
+
+.resumen-item {
+   display: flex;
+   justify-content: space-between;
+   padding: 0.75rem 0;
+   border-bottom: 1px solid #eee;
+}
+
+.resumen-item:last-child {
+   border-bottom: none;
+}
+
+.resumen-totales {
+   margin-top: 1.5rem;
+   padding-top: 1rem;
+   border-top: 2px solid #eee;
+}
+
+.resumen-item.total {
+   font-weight: bold;
+   font-size: 1.2rem;
+   padding-top: 1rem;
+   margin-top: 1rem;
+   border-top: 2px solid #333;
+}
+
+/* Botón de pago */
+.btn-pagar {
+   width: 100%;
+   padding: 1rem;
+   background-color: #E5B5B5;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   font-size: 1.1rem;
+   font-weight: bold;
+   cursor: pointer;
+   transition: background-color 0.3s;
+   margin-top: 1.5rem;
+}
+
+.btn-pagar:hover {
+   background-color: #d4a0a0;
+}
+
+.btn-pagar:disabled {
+   background-color: #ccc;
+   cursor: not-allowed;
+}
+
+/* Mensajes de error */
+.error-mensaje {
+   background-color: #fff3f3;
+   color: #dc3545;
+   padding: 1rem;
+   border-radius: 4px;
+   margin-bottom: 1rem;
+   border: 1px solid #f5c6cb;
+}
+
+/* Sección de métodos de pago */
+.metodos-pago {
+   margin-top: 2rem;
+   text-align: center;
+}
+
+.tarjetas-aceptadas {
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+   margin-top: 0.5rem;
+}
+
+.tarjetas-aceptadas img {
+   height: 30px;
+   opacity: 0.7;
+}
+
+/* Información de seguridad */
+.seguridad-info {
+   margin-top: 1.5rem;
+   text-align: center;
+   color: #666;
+   font-size: 0.9rem;
+}
+
+.seguridad-info i {
+   color: #28a745;
+   margin-right: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+   .container {
+       padding: 1rem;
+   }
+
+   .checkout-container {
+       grid-template-columns: 1fr;
+   }
+
+   .form-row {
+       grid-template-columns: 1fr;
+   }
+
+   .resumen-compra {
+       position: static;
+       margin-top: 2rem;
+   }
+}
+
+/* Estilos para campos con error */
+.form-control.error {
+   border-color: #dc3545;
+}
+
+.form-control.error:focus {
+   box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+   from { opacity: 0; transform: translateY(-10px); }
+   to { opacity: 1; transform: translateY(0); }
+}
+
+.error-mensaje {
+   animation: fadeIn 0.3s ease-out;
+}

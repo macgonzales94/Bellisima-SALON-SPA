@@ -1,0 +1,187 @@
+/* ==========================================================================
+   Variables globales y configuración base
+   ========================================================================== */
+
+/* Define las variables CSS globales */
+:root {
+    /* Paleta de colores basada en el logo */
+    --color-primary: #E5B5B5;    /* Rosa principal */
+    --color-secondary: #D4AF37;  /* Dorado */
+    --color-background: #F9F0F0; /* Fondo rosa suave */
+    --color-text: #333333;       /* Texto principal */
+    --color-text-light: #666666; /* Texto secundario */
+    --color-white: #FFFFFF;      /* Blanco */
+    
+    /* Espaciado */
+    --spacing-xs: 0.25rem; /* Espaciado extra pequeño */
+    --spacing-sm: 0.5rem;  /* Espaciado pequeño */
+    --spacing-md: 1rem;    /* Espaciado medio */
+    --spacing-lg: 2rem;    /* Espaciado grande */
+    --spacing-xl: 4rem;    /* Espaciado extra grande */
+
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra pequeña */
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12); /* Sombra media */
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra grande */
+
+    /* Bordes */
+    --border-radius-sm: 4px; /* Radio de borde pequeño */
+    --border-radius-md: 8px; /* Radio de borde medio */
+    --border-radius-lg: 16px; /* Radio de borde grande */
+    --border-radius-full: 9999px; /* Radio de borde circular */
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0; /* Elimina los márgenes por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño del elemento */
+}
+
+html {
+    font-size: 16px; /* Tamaño de fuente base */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+body {
+    font-family: 'Playfair Display', serif; /* Fuente principal */
+    color: var(--color-text); /* Color de texto principal */
+    line-height: 1.6; /* Altura de línea */
+    background-color: var(--color-background); /* Color de fondo */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+}
+
+
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+/* Sección hero con video de fondo */
+.hero {
+    width: 100%; /* Ancho completo */
+    height: 100vh; /* Altura completa de la ventana */
+    position: relative; /* Posición relativa */
+    overflow: hidden; /* Oculta el desbordamiento */
+    background: linear-gradient(
+        rgba(229, 181, 181, 0.3), /* Gradiente con transparencia */
+        rgba(212, 175, 55, 0.3)
+    );
+    display: flex; /* Usar flexbox para centrar */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    text-align: center; /* Centrar el texto */
+}
+/* Video de fondo */
+.hero video {
+    position: absolute; /* Posición absoluta para el video */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    object-fit: cover; /* Cubrir todo el espacio */
+    z-index: 1; /* Asegurar que el video esté detrás del contenido */
+}
+
+/* Contenido del hero */
+.hero-content {
+    position: relative; /* Posición relativa para el contenido */
+    z-index: 2; /* Asegurar que el contenido esté sobre el video */
+}
+
+.hero-title {
+    color: white; /* Color del texto */
+    font-size: 2.5rem; /* Tamaño del texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Cambia la dirección de los botones a columna */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-button {
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    color: #333; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.action-button:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fondo más opaco al pasar el mouse */
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto padre (evita el azul por defecto) */
+    outline: none; /* Elimina el resaltado al hacer clic (outline) */
+}
+
+a:hover, a:focus, a:active {
+    text-decoration: none; /* Elimina el subrayado al pasar el cursor o enfocar */
+    color: inherit; /* Mantiene el color heredado al interactuar */
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* Ajustes para pantallas pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: row; /* Dirección horizontal */
+        justify-content: space-between; /* Espacio entre elementos */
+    }
+
+    /* Oculta la navegación desktop en móviles */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Ajusta la posición del contenido del hero en móviles */
+    .hero-content {
+        right: 5%; /* Posición desde la derecha */
+        left: 5%; /* Posición desde la izquierda */
+    }
+
+    /* Reduce el tamaño del título en móviles */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    /* Cambia la dirección de los botones a columna en móviles */
+    .action-buttons {
+        display: flex;
+        flex-direction: column; /* Coloca los botones en vertical */
+        gap: 10px; /* Espacio entre botones */
+        margin-bottom: 10px;
+    }
+
+    /* Hace que los botones ocupen el ancho completo en móviles */
+    .action-button {
+        width: px;
+    }
+}
+
+
+
+/* ==========================================================================
+   Utilidades
+   ========================================================================== */
+
+/* Clase para ocultar elementos visualmente pero mantenerlos accesibles */
+.visually-hidden {
+    position: absolute; /* Posición absoluta */
+    width: 1px; /* Ancho mínimo */
+    height: 1px; /* Altura mínima */
+    padding: 0; /* Sin padding */
+    margin: -1px; /* Margen negativo */
+    overflow: hidden; /* Oculta el desbordamiento */
+    clip: rect(0, 0, 0, 0); /* Recorta el contenido */
+    border: 0; /* Sin borde */
+}

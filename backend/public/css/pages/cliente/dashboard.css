@@ -1,0 +1,88 @@
+/* css/cliente/dashboard.css */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: var(--color-primary);
+    padding: var(--spacing-lg);
+    color: var(--color-white);
+}
+
+.logo {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+}
+
+.menu a.active {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.main-content {
+    padding: var(--spacing-lg);
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.pedidos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.pedido-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-md);
+}
+
+.pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.estado {
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.9rem;
+}
+
+.estado.pendiente {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.btn-pagar {
+    width: 100%;
+    padding: var(--spacing-sm);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+}

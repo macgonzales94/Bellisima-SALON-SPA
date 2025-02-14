@@ -17,4 +17,11 @@ router.get('/usuarios', adminController.getUsuarios);
 // Rutas de pedidos
 router.get('/pedidos', adminController.getPedidos);
 
+// Rutas de pedidos
+router.get('/pedidos/:id', adminController.getPedidos);
+
+// actualizar pedido
+router.patch('/pedidos/:id/estado', adminController.actualizarEstadoPedido);
+
+
 module.exports = router;

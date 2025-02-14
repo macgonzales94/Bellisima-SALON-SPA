@@ -1,5 +1,6 @@
 // controllers/categoriaController.js
 const Categoria = require('../models/Categoria');
+const jwt = require('jsonwebtoken');
 
 const categoriaController = {
     // Crear nueva categoría

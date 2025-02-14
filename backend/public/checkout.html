@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Configuración para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Bellisima SALON & SPA</title>
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/checkout.css">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Encabezado de la página -->
+        <h1>Finalizar Compra</h1>
+        
+        <!-- Mensajes de error que se mostrarán dinámicamente -->
+        <div class="error-container">
+            <div class="error-mensaje" style="display: none;">
+                No se pudo generar el token de la tarjeta
+            </div>
+            <div class="error-mensaje" style="display: none;">
+                Error al procesar la tarjeta
+            </div>
+        </div>
+
+        <!-- Contenedor del formulario de checkout -->
+        <div class="checkout-container">
+            <!-- Columna izquierda: Formulario de pago -->
+            <div class="checkout-form">
+                <!-- Sección de dirección de envío -->
+                <section class="direccion-envio">
+                    <h2>Dirección de Envío</h2>
+                    <div class="form-group">
+                        <label for="calle">Dirección</label>
+                        <input type="text" id="calle" required 
+                               placeholder="Av. Olivar 1272"
+                               class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad</label>
+                            <input type="text" id="ciudad" required 
+                                   placeholder="Lima"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="distrito">Distrito</label>
+                            <input type="text" id="distrito" required 
+                                   placeholder="San Isidro"
+                                   class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="codigoPostal">Código Postal</label>
+                            <input type="text" id="codigoPostal" required 
+                                   placeholder="15073"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" required 
+                                   placeholder="976336214"
+                                   class="form-control">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección de información de pago -->
+                <section class="informacion-pago">
+                    <h2>Información de Pago</h2>
+                    
+                    <!-- Email del cliente -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required 
+                               placeholder="ejemplo@email.com"
+                               class="form-control">
+                    </div>
+
+                    <!-- Datos de la tarjeta -->
+                    <div class="form-group">
+                        <label for="numeroTarjeta">Número de Tarjeta</label>
+                        <input type="text" id="numeroTarjeta" required 
+                               placeholder="4111 1111 1111 1111"
+                               maxlength="19"
+                               class="form-control">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fechaVencimiento">Fecha de Vencimiento</label>
+                            <input type="text" id="fechaVencimiento" required 
+                                   placeholder="MM/YY"
+                                   maxlength="5"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" required 
+                                   placeholder="123"
+                                   maxlength="4"
+                                   class="form-control">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna derecha: Resumen de compra -->
+            <div class="resumen-compra">
+                <h2>Resumen de tu pedido</h2>
+                
+                <!-- Lista de productos (se llena dinámicamente) -->
+                <div id="resumenProductos" class="resumen-productos">
+                    <!-- Aquí se insertarán los productos -->
+                </div>
+
+                <!-- Totales -->
+                <div class="resumen-totales">
+                    <div class="resumen-item">
+                        <span>Subtotal</span>
+                        <span id="subtotal">S/. 0.00</span>
+                    </div>
+                    <div class="resumen-item">
+                        <span>Envío</span>
+                        <span id="envio">S/. 0.00</span>
+                    </div>
+                    <div class="resumen-item total">
+                        <span>Total</span>
+                        <span id="total">S/. 0.00</span>
+                    </div>
+                </div>
+
+                <!-- Botón de pago -->
+                <button id="btnPagar" class="btn-pagar">
+                    Realizar Pago
+                </button>
+
+                <!-- Métodos de pago aceptados -->
+                <div class="metodos-pago">
+                    <p>Aceptamos:</p>
+                    <div class="tarjetas-aceptadas">
+                        <img src="images/visa.png" alt="Visa">
+                        <img src="images/mastercard.png" alt="Mastercard">
+                        <img src="images/amex.png" alt="American Express">
+                    </div>
+                </div>
+
+                <!-- Información de seguridad -->
+                <div class="seguridad-info">
+                    <p>
+                        <i class="fa fa-lock"></i>
+                        Tus datos están protegidos por un cifrado SSL de 256 bits
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Script de Culqi (necesario para generar el token) -->
+    <script src="https://checkout.culqi.com/v4"></script>
+    
+    <!-- Nuestro script de checkout -->
+    <script src="js/checkout.js"></script>
+
+    <!-- Font Awesome para iconos -->
+    <script src="https://kit.fontawesome.com/tu-codigo.js" crossorigin="anonymous"></script>
+</body>
+</html>

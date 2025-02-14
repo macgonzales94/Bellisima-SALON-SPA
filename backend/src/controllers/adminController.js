@@ -2,6 +2,7 @@
 const Usuario = require('../models/Usuario');
 const Producto = require('../models/Producto');
 const Pedido = require('../models/Pedido');
+const jwt = require('jsonwebtoken');
 
 const adminController = {
     // Obtener estadísticas generales
@@ -170,7 +171,43 @@ const adminController = {
                 error: error.message
             });
         }
-    }
+    },
+
+    actualizar: async (req, res) => {
+        try {
+            const { nombre, email, telefono, rol, activo, password } = req.body;
+            const updateData = { nombre, email, telefono, rol, activo };
+            
+            if (password) {
+                updateData.password = password;
+            }
+
+            const usuario = await Usuario.findByIdAndUpdate(
+                req.params.id,
+                updateData,
+                { new: true, runValidators: true }
+            ).select('-password');
+
+            if (!usuario) {
+                return res.status(404).json({
+                    mensaje: 'Usuario no encontrado'
+                });
+            }
+
+            res.json({
+                mensaje: 'Usuario actualizado exitosamente',
+                usuario
+            });
+        } catch (error) {
+            console.error('Error al actualizar usuario:', error);
+            res.status(500).json({
+                mensaje: 'Error al actualizar usuario',
+                error: error.message
+            });
+        }
+    },
+
+       
 };
 
 module.exports = adminController;

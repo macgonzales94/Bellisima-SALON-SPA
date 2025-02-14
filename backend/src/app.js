@@ -1,56 +1,52 @@
-// src/app.js
-require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
-const morgan = require('morgan');
+const path = require('path');
+const http = require('http');
+const config = require('./config/config');
+const configureExpress = require('./config/express');
+const configureRoutes = require('./config/routes');
 const conectarDB = require('./config/database');
+const configureSocket = require('./config/socketConfig');
 
-const adminRoutes = require('./routes/admin');
-const usuariosRoutes = require('./routes/usuarios');
-const productosRoutes = require('./routes/productos');
-const categoriasRoutes = require('./routes/categorias');
-const pedidosRoutes = require('./routes/pedidos');
-const carritoRoutes = require('./routes/carrito');
-const pagosRoutes = require('./routes/pagos');
+async function iniciarServidor() {
+    try {
+        // Inicializar app y crear servidor HTTP
+        const app = express();
+        const server = http.createServer(app);
 
+        // Conectar a la base de datos
+        await conectarDB();
 
-// Inicializar app
-const app = express();
+        // Configurar express (middlewares y manejo de errores)
+        configureExpress(app);
 
-// Conectar a la base de datos
-conectarDB();
+        // Configurar Socket.IO
+        const io = configureSocket(server);
 
-// Middlewares
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors());
-app.use(morgan('dev'));
+        // Hacer io disponible en la app para usarlo en los controladores
+        app.set('io', io);
 
-// Usar rutas
-app.use('/api/admin', adminRoutes);
-app.use('/api/usuarios', usuariosRoutes);
-app.use('/api/productos', productosRoutes);
-app.use('/api/categorias', categoriasRoutes); 
-app.use('/api/pedidos', pedidosRoutes);
-app.use('/api/carrito', carritoRoutes);
-app.use('/api/pagos', pagosRoutes);
+        // Configurar rutas
+        configureRoutes(app);
 
-// Rutas básicas
-app.get('/', (req, res) => {
-    res.send('API de E-commerce Belleza funcionando');
-});
+        // Iniciar servidor
+        server.listen(config.server.port, () => {
+            console.log(`Servidor corriendo en puerto ${config.server.port}`);
+            console.log(`Ambiente: ${config.server.env}`);
+        });
 
-// Manejo de errores
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({
-        mensaje: 'Error del servidor',
-        error: process.env.NODE_ENV === 'development' ? err.message : {}
-    });
-});
+        // Manejo de errores no capturados
+        process.on('unhandledRejection', (err) => {
+            console.error('Error no manejado:', err);
+            // En producción, podrías querer cerrar el servidor gracefully
+            // server.close(() => process.exit(1));
+        });
 
-// Puerto
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en puerto ${PORT}`);
-});
+        return app;
+    } catch (error) {
+        console.error('Error al iniciar el servidor:', error);
+        process.exit(1);
+    }
+}
+
+// Iniciar el servidor
+iniciarServidor();

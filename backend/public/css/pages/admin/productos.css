@@ -1,0 +1,185 @@
+/* frontend/css/pages/admin/productos.css */
+
+/* Hereda estilos base del dashboard */
+.admin-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+ }
+ 
+ /* Estilos para la sección de filtros */
+ .filters-section {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+ }
+ 
+ .search-input {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-sm);
+ }
+ 
+ .filter-select {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-sm);
+    min-width: 200px;
+ }
+ 
+ /* Tabla de productos */
+ .products-table-container {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    overflow: auto;
+ }
+ 
+ .products-table {
+    width: 100%;
+    border-collapse: collapse;
+ }
+ 
+ .products-table th,
+ .products-table td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--color-background);
+ }
+ 
+ .products-table th {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+ }
+ 
+ .products-table img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+ }
+ 
+ /* Modal */
+ .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+ }
+ 
+ .modal-content {
+    position: relative;
+    background-color: var(--color-white);
+    margin: 5% auto;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    width: 90%;
+    max-width: 600px;
+    box-shadow: var(--shadow-lg);
+ }
+ 
+ .close {
+    position: absolute;
+    right: var(--spacing-md);
+    top: var(--spacing-md);
+    font-size: 1.5rem;
+    cursor: pointer;
+ }
+ 
+ /* Formulario del modal */
+ .form-group {
+    margin-bottom: var(--spacing-md);
+ }
+ 
+ .form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+ }
+ 
+ .form-group input,
+ .form-group textarea,
+ .form-group select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-sm);
+ }
+ 
+ .form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+ }
+ 
+ /* Botones de acción */
+ .action-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+ }
+ 
+ .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+ }
+ 
+ .btn-edit {
+    background-color: var(--color-secondary);
+ }
+ 
+ .btn-delete {
+    background-color: #dc3545;
+ }
+ 
+ /* Estado del producto */
+ .status-active {
+    color: #28a745;
+ }
+ 
+ .status-inactive {
+    color: #dc3545;
+ }
+ 
+
+.preview-image {
+   max-width: 200px;
+   margin-top: 10px;
+   border-radius: var(--border-radius-sm);
+}
+
+.form-group input[type="file"] {
+   border: 1px dashed var(--color-primary);
+   padding: var(--spacing-sm);
+   width: 100%;
+}
+
+.product-image {
+   width: 50px;
+   height: 50px;
+   object-fit: cover;
+   border-radius: var(--border-radius-sm);
+}
+
+ /* Responsive */
+ @media (max-width: 768px) {
+    .admin-container {
+        grid-template-columns: 1fr;
+    }
+ 
+    .filters-section {
+        flex-direction: column;
+    }
+ 
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+ }

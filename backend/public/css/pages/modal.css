@@ -1,0 +1,87 @@
+/* css/modal.css */
+.modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--color-white);
+    margin: 5% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.modal-logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.auth-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-auth {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--color-primary);
+    background: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    border-radius: var(--border-radius-sm);
+}
+
+.btn-auth.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.auth-form {
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-sm);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

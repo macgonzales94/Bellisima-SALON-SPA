@@ -1,0 +1,141 @@
+/* ==========================================================================
+   Componente de Botones
+   ========================================================================== */
+
+/* Botón de acción principal */
+.action-button {
+    background: linear-gradient(135deg, var(--color-secondary), #F0C14B); /* Fondo con gradiente */
+    color: var(--color-white); /* Color del texto */
+    padding: 0.8rem 2rem; /* Espaciado interno */
+    border-radius: var(--border-radius-full); /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 500; /* Grosor de la fuente */
+    transition: all 0.3s ease; /* Transición suave */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de puntero */
+    text-align: center; /* Centra el texto */
+    display: inline-block; /* Hace que el botón sea inline-block */
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+    box-shadow: var(--shadow-sm); /* Sombra ligera */
+}
+
+.action-button:hover {
+    transform: translateY(-2px); /* Efecto de levantar al hacer hover */
+    box-shadow: var(--shadow-md); /* Sombra más pronunciada al hacer hover */
+    background: linear-gradient(135deg, #F0C14B, var(--color-secondary)); /* Cambia el gradiente al hacer hover */
+}
+
+.action-button:active {
+    transform: translateY(0); /* Restablece la posición al hacer clic */
+    box-shadow: var(--shadow-sm); /* Sombra ligera al hacer clic */
+}
+
+/* Botón secundario (shop) */
+.shop-button {
+    border: 1.5px solid var(--color-text); /* Borde */
+    padding: 0.5rem 2rem; /* Espaciado interno */
+    border-radius: var(--border-radius-full); /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    color: var(--color-text); /* Color del texto */
+    transition: all 0.3s ease; /* Transición suave */
+    background: transparent; /* Fondo transparente */
+    cursor: pointer; /* Cursor de puntero */
+    font-family: 'Playfair Display', serif; /* Fuente específica */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+}
+
+.shop-button:hover {
+    background: var(--color-text); /* Cambia el fondo al hacer hover */
+    color: var(--color-white); /* Cambia el color del texto al hacer hover */
+    transform: translateY(-1px); /* Efecto de levantar al hacer hover */
+    box-shadow: var(--shadow-sm); /* Sombra ligera al hacer hover */
+}
+
+.shop-button:active {
+    transform: translateY(0); /* Restablece la posición al hacer clic */
+    box-shadow: none; /* Sin sombra al hacer clic */
+}
+
+/* Botón de cierre */
+.close-button {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de puntero */
+    padding: var(--spacing-xs); /* Espaciado interno */
+    color: var(--color-text); /* Color del texto */
+    transition: color 0.3s ease; /* Transición suave */
+    line-height: 1; /* Altura de línea */
+}
+
+.close-button:hover {
+    color: var(--color-secondary); /* Cambia el color al hacer hover */
+}
+
+/* Botón de menú */
+.menu-toggle {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de puntero */
+    padding: var(--spacing-sm); /* Espaciado interno */
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1); /* Efecto de escala al hacer hover */
+}
+
+.menu-toggle:active {
+    transform: scale(0.95); /* Efecto de escala al hacer clic */
+}
+
+/* Variantes de tamaño */
+.button-sm {
+    padding: 0.5rem 1.5rem; /* Espaciado interno reducido */
+    font-size: 0.875rem; /* Tamaño de fuente pequeño */
+}
+
+.button-lg {
+    padding: 1rem 2.5rem; /* Espaciado interno grande */
+    font-size: 1.125rem; /* Tamaño de fuente grande */
+}
+
+/* Variantes de estilo */
+.button-outline {
+    background: transparent; /* Fondo transparente */
+    border: 2px solid var(--color-secondary); /* Borde */
+    color: var(--color-secondary); /* Color del texto */
+}
+
+.button-outline:hover {
+    background: var(--color-secondary); /* Cambia el fondo al hacer hover */
+    color: var(--color-white); /* Cambia el color del texto al hacer hover */
+}
+
+/* Estados de botón */
+.button-disabled {
+    opacity: 0.6; /* Opacidad reducida */
+    cursor: not-allowed; /* Cursor de no permitido */
+    pointer-events: none; /* Desactiva los eventos de clic */
+}
+
+/* Grupo de botones */
+.button-group {
+    display: flex; /* Flexbox para alinear elementos */
+    gap: var(--spacing-sm); /* Espacio entre elementos */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column; /* Coloca los botones en columna en móviles */
+    }
+
+    .action-button {
+        width: 100%; /* Ancho completo en móviles */
+    }
+}

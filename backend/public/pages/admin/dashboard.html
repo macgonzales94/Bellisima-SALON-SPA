@@ -1,0 +1,83 @@
+<!-- frontend/pages/admin/dashboard.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dashboard Admin - Bellisima SALON & SPA</title>
+   <link rel="stylesheet" href="../../css/main.css">
+   <link rel="stylesheet" href="../../css/pages/admin/dashboard.css">
+</head>
+<body>
+   <div class="admin-container">
+       <!-- Sidebar -->
+       <aside class="admin-sidebar">
+           <div class="admin-logo">
+               <h2>BELLISIMA</h2>
+               <p>Panel Administrativo</p>
+           </div>
+           <nav class="admin-nav">
+               <a href="dashboard.html" class="active">Dashboard</a>
+               <a href="productos.html">Productos</a>
+               <a href="pedidos.html">Pedidos</a>
+               <a href="usuarios.html">Usuarios</a>
+               <a href="../../index.html">Volver al sitio</a>
+               <button id="logoutBtn" class="logout-btn">Cerrar Sesión</button>
+           </nav>
+       </aside>
+
+       <!-- Main Content -->
+       <main class="admin-main">
+           <header class="admin-header">
+               <h1>Dashboard</h1>
+               <div class="admin-user">
+                   <span id="adminName">Admin</span>
+               </div>
+           </header>
+
+           <!-- Stats Cards -->
+           <div class="stats-grid">
+               <div class="stat-card">
+                   <h3>Ventas Totales</h3>
+                   <p id="totalVentas">S/. 0.00</p>
+               </div>
+               <div class="stat-card">
+                   <h3>Pedidos Pendientes</h3>
+                   <p id="pedidosPendientes">0</p>
+               </div>
+               <div class="stat-card">
+                   <h3>Productos</h3>
+                   <p id="totalProductos">0</p>
+               </div>
+               <div class="stat-card">
+                   <h3>Usuarios</h3>
+                   <p id="totalUsuarios">0</p>
+               </div>
+           </div>
+
+           <!-- Recent Orders Table -->
+           <div class="recent-orders">
+               <h2>Pedidos Recientes</h2>
+               <table>
+                   <thead>
+                       <tr>
+                           <th>ID</th>
+                           <th>Cliente</th>
+                           <th>Total</th>
+                           <th>Estado</th>
+                           <th>Fecha</th>
+                           <th>Acciones</th>
+                       </tr>
+                   </thead>
+                   <tbody id="recentOrdersTable">
+                       <!-- JS will populate this -->
+                   </tbody>
+               </table>
+           </div>
+       </main>
+   </div>
+   <script src="../../js/config.js"></script>
+   <script src="../../js/admin/dashboard.js"></script>
+   <script src="../../js/admin/autenticacion.js"></script>
+</body>
+</html>

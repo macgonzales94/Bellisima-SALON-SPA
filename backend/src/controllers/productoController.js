@@ -1,13 +1,21 @@
 // controllers/productoController.js
 const Producto = require('../models/Producto');
+const jwt = require('jsonwebtoken'); 
 
 const productoController = {
     // Crear un nuevo producto (solo admin)
     crear: async (req, res) => {
         try {
-            const producto = new Producto(req.body);
-            await producto.save();
+            // Registro de depuración
+            console.log('Datos recibidos:', req.body);
+            console.log('Archivos recibidos:', req.file);
 
+            // Usar directamente req.body si no hay parseo de JSON
+            const productoData = req.body;
+    
+            const producto = new Producto(productoData);
+            await producto.save();
+    
             res.status(201).json({
                 mensaje: 'Producto creado exitosamente',
                 producto
@@ -20,7 +28,7 @@ const productoController = {
             });
         }
     },
-
+ 
     // Obtener todos los productos
     listar: async (req, res) => {
         try {

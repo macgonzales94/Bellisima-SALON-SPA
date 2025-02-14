@@ -59,7 +59,17 @@ const esAdmin = (req, res, next) => {
     next();
 };
 
+const esCliente = (req, res, next) => {
+    if (!req.usuario || req.usuario.rol !== 'cliente') {
+        return res.status(403).json({
+            mensaje: 'Acceso denegado - Se requiere rol de cliente'
+        });
+    }
+    next();
+};
+
 module.exports = {
     verificarToken,
-    esAdmin
+    esAdmin,
+    esCliente
 };

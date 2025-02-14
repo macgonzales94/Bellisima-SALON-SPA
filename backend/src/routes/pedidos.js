@@ -7,6 +7,9 @@ const { verificarToken } = require('../middlewares/autenticacion');
 // Todas las rutas requieren autenticación
 router.use(verificarToken);
 
+//
+router.post('/crear-desde-carrito', pedidoController.crearDesdeCarrito);
+
 // Crear nuevo pedido
 router.post('/', pedidoController.crear);
 

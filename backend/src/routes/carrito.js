@@ -7,6 +7,9 @@ const { verificarToken } = require('../middlewares/autenticacion');
 // Todas las rutas del carrito requieren autenticación
 router.use(verificarToken);
 
+// Ruta para sincronizar el carrito temporal
+router.post('/sincronizar', carritoController.sincronizar);
+
 // Obtener carrito del usuario
 router.get('/', carritoController.obtenerCarrito);
 
@@ -18,5 +21,7 @@ router.put('/actualizar', carritoController.actualizarCantidad);
 
 // Eliminar producto del carrito
 router.delete('/eliminar/:productoId', carritoController.eliminarProducto);
+
+
 
 module.exports = router;

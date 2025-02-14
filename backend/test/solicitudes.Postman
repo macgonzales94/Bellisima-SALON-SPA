@@ -1,0 +1,53 @@
+====================================================
+Registro de Usuario
+====================================================
+POST http://localhost:3000/api/usuarios/registro
+Content-Type: application/json
+{
+    "nombre": "Usuario Test",
+    "email": "test5@gmail.com",
+    "password": "123456",
+    "telefono": "999888777",
+    "direccion": {
+        "calle": "Av Principal",
+        "numero": "123",
+        "ciudad": "Lima",
+        "distrito": "Miraflores",
+        "codigoPostal": "15046"
+    }
+}
+
+====================================================
+Login
+====================================================
+POST http://localhost:3000/api/usuarios/login
+
+Content-Type: application/json
+{
+    "email": "test5@gmail.com",
+    "password": "123456"
+}
+
+====================================================
+Crear Producto
+====================================================
+POST http://localhost:3000/api/productos
+
+{
+    "nombre": "Labial Mate",
+    "marca": "MAC",
+    "descripcion": "Labial de larga duración",
+    "precio": 59.99,
+    "categoria": "Maquillaje",
+    "stock": 100,
+    "imagen": [archivo]
+}
+
+
+
+
+
+
+
+
+

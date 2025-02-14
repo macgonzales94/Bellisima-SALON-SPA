@@ -1,36 +1,38 @@
-name: CI/CD de Node.js a Azure App Service
+name: Build and deploy Node.js app to Azure Web App - bellisima
 
 on:
   push:
-    branches: [ "main" ]
+    branches: 
+      - master
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+    
     steps:
     - uses: actions/checkout@v4
     
-    - name: Usar Node.js
-      uses: actions/setup-node@v4
+    - name: Set up Node.js version
+      uses: actions/setup-node@v3
       with:
-        node-version: '20.x'
+        node-version: '18.x'
     
-    - name: Instalar dependencias
+    - name: npm install, build, and test
       working-directory: Bellisima-SALON-SPA/backend
-      run: npm ci
+      run: |
+        npm install
+        npm run build --if-present
+        npm run test --if-present
     
-    - name: Construir proyecto
-      working-directory: Bellisima-SALON-SPA/backend
-      run: npm run build
-    
-    - name: Comprimir artefacto completo
+    - name: Zip artifact for deployment
       working-directory: Bellisima-SALON-SPA/backend
       run: zip -r ../../release.zip .
-
-    - name: Subir artefacto para despliegue
-      uses: actions/upload-artifact@v3
+    
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v4
       with:
         name: node-app
         path: release.zip
@@ -38,12 +40,22 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    
+    permissions:
+      id-token: write
+      contents: read
     
     steps:
-    - name: Descargar artefacto
-      uses: actions/download-artifact@v3
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v4
       with:
         name: node-app
+    
+    - name: Unzip artifact for deployment
+      run: unzip release.zip
     
     - name: Login to Azure
       uses: azure/login@v2
@@ -52,7 +64,7 @@ jobs:
         tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A647789121D346E98A63218075ECD192 }}
         subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E1CD65E8443A404CA9D25CA36D5CBD4F }}
     
-    - name: 'Desplegar en Azure Web App'
+    - name: 'Deploy to Azure Web App'
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v3
       with:

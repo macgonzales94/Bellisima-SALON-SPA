@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "nodemon ./src/app.js",
     "copiar-frontend": "node scripts/copiar.frontend.Script.js",
+    "build": "echo 'Build script'",
     "construir": "npm run copiar-frontend",
     "iniciar": "node src/app.js"
   },

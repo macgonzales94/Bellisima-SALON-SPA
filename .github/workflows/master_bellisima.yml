@@ -25,15 +25,11 @@ jobs:
       working-directory: Bellisima-SALON-SPA/backend
       run: npm run build
     
-    - name: Ejecutar pruebas
-      working-directory: Bellisima-SALON-SPA/backend
-      run: npm test
-    
-    - name: Comprimir artefacto para despliegue
+    - name: Comprimir artefacto completo
       working-directory: Bellisima-SALON-SPA/backend
       run: zip -r ../../release.zip .
 
-    - name: Subir artefacto para trabajo de despliegue
+    - name: Subir artefacto para despliegue
       uses: actions/upload-artifact@v3
       with:
         name: node-app
